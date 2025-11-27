@@ -1,0 +1,30 @@
+# 🔐 Environment variables
+.env
+
+# 🐍 Python build / bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 💽 Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# 🌐 VS Code, PyCharm, IDE stuff
+.vscode/
+.idea/
+
+# 📦 Pip installer cache
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 🧪 Test / coverage (if ever added)
+.coverage
+htmlcov/
+
+# 🔧 OS files
+.DS_Store
+Thumbs.db

@@ -2171,6 +2171,7 @@ input[type="radio"]+label:before {
 
 .image.thumb {
 	text-align: center;
+	cursor: pointer;
 }
 
 .image.thumb:after {
@@ -2723,6 +2724,7 @@ input[type="button"]:disabled,
 	text-align: right;
 	top: 0;
 	width: 35%;
+	box-shadow: 4px 0 10px rgba(0, 0, 0, 0.10);
 }
 
 #header>* {
@@ -2780,8 +2782,20 @@ input[type="button"]:disabled,
 
 /* Footer */
 
+#footer .inner {
+	padding: 1.75em 2em 2em 2em;
+}
+
 #footer .icons {
-	margin: 1em 0 0 0;
+	margin: 1.5em 0 0.5em 0;
+}
+
+#footer .icons .icon {
+	color: #4EA7D8;
+}
+
+#footer .icons .icon:hover {
+	color: #ffffff;
 }
 
 #footer .icons a {
@@ -2803,7 +2817,7 @@ input[type="button"]:disabled,
 	color: rgba(255, 255, 255, 0.4);
 	font-size: 0.8em;
 	list-style: none;
-	margin: 1em 0 0 0;
+	margin: 0.75em;
 	padding: 0;
 }
 
@@ -2845,13 +2859,211 @@ input[type="button"]:disabled,
 	margin-top: 1em;
 }
 
+#projects .work_item {
+	margin-bottom: 2.75em;
+}
+
 #projects .work-item .image.thumb img {
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	border-radius: 4px;
+	width: 100%;
+	height: auto;
 }
 
 #projects .work-item .image.thumb:hover img {
 	transform: translateY(-4px);
 	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Skills section */
+#skills {
+	padding: 3em 0;
+}
+
+#skills h3 {
+	margin-bottom: 0.75em;
+}
+
+#skills .skill-list {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+#skills .skill-list li {
+	margin-bottom: 0.4em;
+}
+
+/* Optional: small icon color for section headings */
+#skills h3 .icon {
+	margin-right: 0.35em;
+	color: #4EA7D8;
+	/* highlight blue */
+}
+
+/* ---- Skill badges ---- */
+#skills .badge-row {
+	margin-top: 0.75em;
+	margin-bottom: 2em;
+	/* spacing BEFORE footer */
+}
+
+#skills .badge {
+	display: inline-block;
+	background: rgba(3, 21, 34, 0.8);
+	color: #ffffff;
+	border: 1px solid #4EA7D8;
+	border-radius: 14px;
+	padding: 0.38em 0.78em;
+	position: relative;
+	font-weight: 500;
+	font-size: 0.75em;
+	margin: 0.25em;
+	overflow: hidden;
+	z-index: 1;
+	transition: background 0.2s ease, border-color 0.2s ease;
+	box-sizing: border-box;
+}
+
+/* Stitched edge */
+#skills .badge::selection,
+#skills .badge::-moz-selection {
+	background: none;
+}
+
+#skills .badge::before,
+#skills .badge::after {
+	border-radius: inherit;
+}
+
+#skills .badge:hover {
+	background: rgba(78, 167, 216, 0.9);
+	/* cleaner highlight */
+	border-color: #4EA7D8;
+	color: #031522;
+	cursor: default;
+}
+
+#skills .badge:hover::after {
+	opacity: 0.25;
+	/* subtle fade of chalk dust on hover */
+	filter: blur(1.5px);
+}
+
+#skills .badge::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/bg.jpg");
+	background-size: 220%;
+	/* Zoom felt texture a bit */
+	background-position: 40% 40%;
+	opacity: 0.22;
+	/* Slightly stronger */
+	filter: blur(1.8px) contrast(105%);
+	z-index: 0;
+}
+
+#skills .badge::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15), transparent 60%),
+		radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.08), transparent 50%);
+	opacity: 0.45;
+	filter: blur(2px);
+	z-index: 0;
+	pointer-events: none;
+	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.12),
+		inset 0 0 0 1px rgba(3, 21, 34, 0.45);
+}
+
+#skills .badge .thread {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	border-radius: inherit;
+	border: 1px dashed rgba(255, 255, 255, 0.55);
+	opacity: 0.45;
+	mix-blend-mode: overlay;
+}
+
+/* Contact section */
+#contact {
+	padding: 4em 0 3em 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+#contact .inner-narrow {
+	max-width: 34em;
+	margin: 0 auto;
+	background: #ffffff;
+	padding: 2em 2.5em 2.5em 2.5em;
+	border-radius: 8px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Form fields */
+#contact .field {
+	margin-bottom: 1.25em;
+}
+
+#contact label {
+	font-size: 0.9em;
+	font-weight: 600;
+	margin-bottom: 0.25em;
+	display: block;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+	width: 100%;
+	border-radius: 4px;
+	border: 1px solid rgba(3, 21, 34, 0.25);
+	padding: 0.6em 0.75em;
+	box-sizing: border-box;
+}
+
+#contact textarea {
+	resize: vertical;
+}
+
+/* Status messages */
+.contact-status {
+	padding: 0.75em 1em;
+	border-radius: 4px;
+	margin-bottom: 1.5em;
+	font-size: 0.9em;
+}
+
+.contact-status.success {
+	background: rgba(46, 160, 67, 0.12);
+	border: 1px solid #2ea043;
+	color: #165524;
+}
+
+.contact-status.error {
+	background: rgba(212, 45, 57, 0.12);
+	border: 1px solid #d42d39;
+	color: #6b1118;
+}
+
+/* Center actions row */
+#contact .actions-centered {
+	justify-content: center;
+	text-align: center;
+	margin-top: 0.75em;
+}
+
+#contact .actions-centered li {
+	margin: 0 0.4em;
 }
 
 /* Main */
