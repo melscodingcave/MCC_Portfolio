@@ -1,11 +1,15 @@
 from flask import Flask, render_template, url_for, request, redirect
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 import os
 import smtplib
 from email.message import EmailMessage
 from dotenv import load_dotenv
+import time
 
 app = Flask(__name__)
 load_dotenv()  # load variables from .env into os.environ
+limiter = Limiter(get_remote_address, app=app)
 
 
 @app.route('/')
@@ -14,10 +18,26 @@ def home_page():
 
 
 @app.route('/contact', methods=['POST'])
+@limiter.limit("5 per hour")
 def contact():
+    submitted_at = int(request.form.get("ts", "0"))
+    if time.time() - submitted_at < 6:
+        return ("", 204)
+
+    ALLOWED_INQURY_TYPES = {
+        "job", "freelance_small", "freelance_ongoing", "collab", "other"
+    }
+
+    inquiry_type = (request.form.get("inquiry_type") or "").strip()
+    if inquiry_type not in ALLOWED_INQURY_TYPES:
+        return ("", 204)
+
+    if request.form.get("no_resell") != "on":
+        return ("", 204)
+
     # Honeypot: if this field is filled, treat as spam and pretend success
-    if request.form.get('website'):
-        return redirect(url_for('home_page', status='success'))
+    if request.form.get('company_website'):
+        return ("", 204)
 
     name = request.form.get('name', '').strip()
     email = request.form.get('email', '').strip()
@@ -34,8 +54,17 @@ def contact():
         or 'no-reply@melscodingcave.com'
     )
 
+    labels = {
+        "job": "JOB",
+        "freelance_small": "FREELANCE",
+        "freelance_ongoing": "ONGOING",
+        "collab": "COLLAB",
+        "other": "OTHER",
+    }
+
+    tag = labels.get(inquiry_type, "OTHER")
     msg = EmailMessage()
-    msg['Subject'] = f"[Portfolio] {subject}"
+    msg['Subject'] = f"[{tag}] {subject}"
     msg['From'] = from_addr
     msg['To'] = "melanie.basso@melscodingcave.com"
     msg['Reply-To'] = email  # so you can just hit "Reply" in your inbox

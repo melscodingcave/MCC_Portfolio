@@ -264,6 +264,23 @@
 					</div>
 
 					<div class="field">
+						<label for="inquiry_type">Inquiry Type</label>
+						<select name="inquiry_type" id="inquiry_type" required>
+							<option value="" selected disabled>-- Select one --</option>
+							<option value="job">Job opportunity</option>
+							<option value="freelance_small">Freelance project (small)</option>
+							<option value="freelance_ongoing">Freelance project (ongoing)</option>
+							<option value="collab">Collaboration / speaking</option>
+							<option value="other">Other</option>
+						</select>
+					</div>
+
+					<div class="field">
+						<input type="checkbox" id="no_resell" name="no_resell" required>
+						<label for="no_resell">I'm not contacting about reselling/marketing services.</label>
+					</div>
+
+					<div class="field">
 						<label for="subject">Subject</label>
 						<input type="text" name="subject" id="subject" required />
 					</div>
@@ -275,8 +292,8 @@
 
 					<!-- Honeypot field (hidden) -->
 					<div style="display:none;">
-						<label for="website">Website</label>
-						<input type="text" name="website" id="website" />
+						<label></label>
+						<input type="text" name="company_website" tabindex="-1" autocomplete="off" />
 					</div>
 
 					<ul class="actions actions-centered">
