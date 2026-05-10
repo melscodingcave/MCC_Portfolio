@@ -2,6 +2,7 @@ import { ArrowLeft, Clock, Tag } from 'lucide-react'
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { blogPosts } from '../data/blogPosts'
+import { GiscusComments } from './GiscusComments'
 
 export function BlogPost() {
     const { slug } = useParams()
@@ -72,12 +73,7 @@ export function BlogPost() {
     return (
         <div className="max-w-3xl mx-auto px-4 sm:px-6 py-24">
             <button
-                onClick={() => {
-                    navigate('/')
-                    setTimeout(() => {
-                        document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' })
-                    }, 100)
-                }}
+                onClick={() => navigate(-1)}
                 className="flex items-center gap-2 text-[#3B82F6] hover:text-blue-400 transition-colors mb-8"
             >
                 <ArrowLeft size={20} />
@@ -122,6 +118,7 @@ export function BlogPost() {
                     ))}
                 </div>
             </div>
+            <GiscusComments />
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import { About } from './components/About'
 import { Blog } from './components/Blog'
+import { BlogPage } from './components/BlogPage'
 import { BlogPost } from './components/BlogPost'
 import { Contact } from './components/Contact'
 import { Experience } from './components/Experience'
@@ -26,6 +27,7 @@ export default function App() {
             <Contact />
           </>
         } />
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
       <Footer />

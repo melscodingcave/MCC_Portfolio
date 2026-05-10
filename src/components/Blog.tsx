@@ -17,7 +17,7 @@ export function Blog() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {blogPosts.map((post) => (
+          {blogPosts.slice(0, 4).map((post) => (
             <div
               key={post.id}
               onClick={() => navigate(`/blog/${post.slug}`)}
@@ -41,6 +41,15 @@ export function Blog() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-8">
+          <button
+            onClick={() => navigate('/blog')}
+            className="px-6 py-3 border border-[#3B82F6] text-[#3B82F6] rounded-lg hover:bg-[#3B82F6] hover:text-white transition-colors"
+          >
+            View All Posts →
+          </button>
         </div>
 
         <div className="mt-12 text-center">
