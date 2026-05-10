@@ -1,0 +1,361 @@
+Topic: Learning new skills
+Date: 3Mo ago
+Post: 
+I genuinely enjoy learning new skills — even ones outside my day-to-day role — just because I like building things and understanding how systems work.
+
+It’s made me realize growth at work should feel encouraged, not risky.
+
+Curiosity and skill-building should be assets, not something you feel like you have to hide.
+
+How do you make space for learning in your career? 
+
+Topic: Engineering mind doesn't turn off
+Date: 3Mo ago
+Post: 
+Hot take: engineering mindset doesn’t turn off at 5pm.
+I recently restarted a new game and caught myself doing what I always do at work:
+Instead of rushing objectives, I:
+ • optimized resource pipelines
+ • automated recurring tasks
+ • built supporting systems first
+ • reduced future toil
+ • and treated progression like an architecture problem
+In other words… I accidentally built infrastructure before playing.
+Same pattern I use in software: Design the system so results happen naturally.
+It’s funny how problem-solving habits show up everywhere — even in places you’d expect to “just relax.”
+Engineer brain stays on 😄
+
+Topic: Handling downstream effects
+Date: 3Mo ago
+Post: 
+January 30, 2026 was a useful reminder of how interconnected production systems can be.
+
+A change led to some unexpected downstream effects. Once identified, the focus shifted to understanding impact, stabilizing what we could, and making sure the response was well-documented.
+
+How I approached the situation:
+- Prioritized impact assessment before proposing fixes
+- Helped validate and restore affected data where feasible
+- Documented decisions, constraints, and follow-up actions
+- Contributed to root cause analysis with a process-focused lens
+- Ensured learnings were captured for future reference
+
+The takeaway: issues happen even in well-run systems. What matters is responding with clarity, consistency, and accountability. Treating incidents as opportunities to strengthen processes is one of the most practical forms of engineering problem-solving.
+
+Topic: Personality vs IQ tests
+Date: 2Mo ago
+Post: 
+Over the years, I’ve taken several IQ tests. The scores ranged from 114 to 142. All above average, one briefly landing in the “highly gifted” category.
+
+Interesting data points—but not the point.
+
+Earlier in my career, I went through an interview process that felt strong: good conversation, solid technical discussion, clear alignment. Then came a required personality assessment to determine “fit.” That result ultimately carried more weight than the interaction itself.
+
+I’m not anti-tests. I actually find them useful—and sometimes fun—as tools for reflection. They can surface tendencies, preferences, or ways someone might approach problems.
+
+What gives me pause is when a static test outweighs observed behavior:
+- real conversation
+- collaboration
+- problem-solving under ambiguity
+- how someone responds when things don’t go as planned
+
+Engineering (and most real work) happens in dynamic systems with incomplete information. Reducing people to a score—IQ or personality—risks missing that entirely.
+
+Curious how others balance structured assessments with real-world signals when evaluating talent.
+
+Topic: Being a builder
+Date: 2Mo ago
+Post: 
+I’ve realized something about myself recently:
+I’m a builder at heart.
+
+Not title-driven. Not hierarchy-motivated. I’m most energized when I’m creating something useful.
+
+Here’s how I work best:
+• I care less about the label on the role and more about what I get to build
+ • I’m fulfilled when I can create tools or systems that make someone else’s job easier
+ • I pay close attention to how people actually use what I build — and I adjust accordingly
+ • Ownership and autonomy matter more to me than visibility
+ • If I mentor, it’s through shared problem-solving and building alongside someone
+
+There’s something uniquely satisfying about watching a system you designed quietly remove friction for others.
+
+That’s impact to me.
+
+The more I understand how I’m wired, the more intentional I can be about the kind of problems I choose to solve.
+
+Still building.
+
+Topic: My way of thinking
+Date: 2Mo ago
+Post: 
+Working in QA — and spending a lot of time around data — taught me something early:
+
+Outputs lie. Or at least, they mislead without context.
+- A passing test doesn’t prove system resilience
+- A clean dashboard doesn’t guarantee clean inputs
+- A defect rarely starts where it surfaces
+- “No alerts” isn’t the same as “no risk”
+
+Titles aside, I’ve become less interested in the number and more interested in what produced it.
+- What assumptions were made?
+- What dependencies shifted?
+- What edge case hasn’t been exercised yet?
+
+Whether it’s a test result or a metric, the real engineering work is understanding the structure behind the output.
+
+Trust doesn’t come from reports. It comes from knowing how the system behaves under stress.
+
+Topic: Durability over a bandaid
+Date: 2Mo ago
+Post: 
+When I look back on my career, I don’t think I was chasing roles. I was moving closer to understanding how things actually work.
+
+- In customer support, I saw where users got stuck and wanted to reduce that friction.
+- In product support, I started recognizing the same issues resurfacing.
+- In QA, I questioned assumptions — and flagged the “not a problem yet, but it will be” scenarios.
+- Now, doing automation and development work, my focus has shifted. Instead of fixing one issue at a time, I began looking at root causes and making changes that would actually hold up.
+
+Somewhere along the way, I stopped thinking only about the immediate fix and started thinking about durability.
+
+I’ve always been drawn to that mindset. In billiards, you don’t just take the next shot — you play position for the ones after it. Angle, speed, spin — small inputs shape the run.
+
+Software isn’t much different.
+
+Fixing the current issue matters. Designing what happens next matters more.
+
+That shift has shaped the way I build.
+
+Topic: Automation in a legacy system
+Date: 2Mo ago
+Post: 
+I’ve been spending some time thinking through what it actually takes to add automation into a legacy codebase.
+
+It’s one thing to automate something built with testing in mind. It’s another when the original design didn’t account for it.
+
+The interesting questions aren’t about tools. They’re about approach:
+- Where can you introduce seams without changing behavior?
+- How do you improve visibility without overengineering it?
+- What’s worth adapting — and what should remain untouched?
+
+Legacy systems aren’t “bad.” They reflect decisions made under different constraints.
+
+The challenge is layering in testability thoughtfully, without creating more complexity than you remove.
+
+Automation at this stage isn’t about coverage numbers. It’s about understanding the structure well enough to introduce change responsibly.
+
+That’s the kind of engineering problem I enjoy most.
+
+Topic: Personal project
+Date: 2Mo ago
+Post: 
+Made good progress this weekend on a personal software project I’ve been building.
+
+The core functionality has been working for a bit. What I worked on recently was adding a new way to interact with it — without messing up what already works.
+
+Getting it to respond wasn’t the hard part.
+
+The harder part was:
+- Keeping the new logic separate from the core behavior
+- Making sure it’s still easy to test
+- Thinking through what happens if the input isn’t recognized
+- Making changes without creating a ripple effect
+
+Today it worked end-to-end.
+
+Not just “it reacts,” but structured in a way that won’t be painful to maintain later.
+
+I’ve realized I enjoy this stage the most — figuring out how to add capability without adding chaos.
+
+That’s where building gets interesting.
+
+Topic: Vibe Coding
+Date: 2Mo ago
+Post: 
+I’ve been intentionally practicing what people call “vibe coding” — building alongside AI instead of just using it for quick answers.
+
+Two things pushed me there.
+- A billiards league teammate (a seasoned software engineer) challenged himself to build a full site using only AI. The result was a working web app comparing pro stats and payouts — not a gimmick, but functional.
+- Around the same time, I started a ZTM course focused on this approach.
+
+So I tested it myself.
+
+Not copy/paste coding — more like:
+- Pressure-testing design decisions
+- Generating scaffolding to focus on structure
+- Surfacing edge cases earlier
+
+The biggest shift hasn’t been speed. It’s clarity.
+
+If I can’t clearly define what I’m building, AI exposes that quickly.
+
+Used intentionally, it doesn’t replace judgment — it sharpens it.
+
+Topic: Software architecture
+Date: 1Mo ago
+Post: 
+This weekend was a good reminder that building doesn’t always look loud.
+
+I spent time designing the early architecture for a software suite I’ve been working on — thinking through structure before features. I also created several infrastructure tickets, including monetization planning, because sustainability matters as much as functionality.
+
+At the same time, I kept progressing through my ZTM coding lessons. Strengthening fundamentals while actively building has been a solid combination.
+
+And then there was billiards.
+
+I practiced and spent time learning more about cue repair and building from a friend. It struck me (again) how similar it is to software. Precision matters. Small adjustments compound. Structure determines outcome.
+
+The more I build, the more I see how my technical work and personal interests reinforce each other.
+
+Continuous learning doesn’t have to be dramatic. Sometimes it’s steady progress — designing, refining, practicing — and letting everything connect over time.
+
+Topic: Vibe Coding
+Date: 1Mo ago
+Post: 
+I’ve been experimenting more with “vibe coding” and using AI tools to boost productivity while developing. One thing has become increasingly clear: AI-generated code still requires careful scrutiny.
+
+I regularly double- and triple-check suggestions from tools like ChatGPT, Claude, and Copilot. This morning, while reading the TL;DR newsletter, I came across an article discussing a concept called “Comprehension Debt.” It immediately resonated.
+
+The idea is that as more AI-generated code is committed, overall understanding of that code may decline. It might be technically correct, but that doesn’t mean it aligns with architecture, design intent, or long-term maintainability.
+
+Having worked in healthcare and aerospace, that gap concerns me.
+
+AI is an incredibly powerful tool—but it doesn’t replace responsibility.
+
+As developers and testers, we’re still the final line of defense. Understand the code. Question it. Own it.
+
+#SoftwareEngineering #AIinDevelopment #SoftwareArchitecture #ResponsibleAI #QualityEngineering
+
+Topic: High impact work
+Date: 1Mo ago
+Post: 
+One thing I’ve been reflecting on recently is how often inefficiencies become “normal” over time.
+
+A process that takes hours, a tool that doesn’t scale, a workflow with built-in bottlenecks—we get used to them.
+
+But every so often, it’s worth stepping back and asking: “Is there a better way this could work?”
+
+In the past few years, that led to:
+• Cutting a 6–10 hour disk copy process down to under an hour
+• Exploring alternatives to a shared spreadsheet with a waitlist by introducing a database-backend approach
+• Prototyping a more scalable testing approach using a dev codebase and logic-based automation
+
+What stood out to me is that none of these started as assigned work.
+
+They started as small observations.
+
+And sometimes, that’s where the most meaningful improvements come from.
+
+I've found that the highest-impact work often comes from improving systems, not just executing within them.
+
+Topic: The Best Route, not the Easiest
+Date: 4Wks ago
+Post: 
+I've had a coworker who took the easy way out. Someone who would try to get others to do the work they were responsible for. Whether it was a lack of knowledge, experience, or confidence, I never had a chance to find out. 
+
+It got me thinking about a question: 
+- If you had to choose between the quickest/easiest route and the more time-intensive, detailed one, which would you pick? 
+Most people seem to choose the former. 
+If you asked me, my response wouldn't be so straightforward. 
+The response, instead, would be a question: 
+Which one is actually needed, and why? 
+
+Most companies, especially with AI in the mix, are pushing for the quickest solutions. But 9 times out of 10, those aren't the best solutions. They often create downstream issues that better research upfront could have prevented.
+
+Instead of asking "what's the fastest way to do this?", maybe we should be asking "what's the smartest and most efficient way?"
+
+Efficiency doesn't always mean immediate speed. Sometimes it means investing weeks, or even months, into building something right, so you never have to do it again.
+
+However, when you ask for that time, the response is often: "we can't afford it," instead of "how does this help us long-term?"
+
+And that mindset it exactly where long-term problems begin.
+
+Topic: Rewrite using AI
+Date: 3Wks ago
+Post: 
+I was recently reading an article about letting engineers be engineers and using AI as a tool to help speed up the process. It focused on how AI is being handed the reins: writing code, making architectural decisions, even creating JIRA tickets.
+
+The problem? No human actually owns those decisions.
+
+The argument of "a senior engineer reviewed it" sounds good, but in reality, everything looks polished, so it gets approved and shipped. No real conversation. No discussion about whether it's actually the right approach for the team or the environment it's being built in. 
+
+AI gives feedback based on generalized models. Not your team, your constraints, or your context. Not why you chose MSSQL over MongoDB, or AWS over Azure. Maybe those decisions were made because they're "technically" the best fit, BUT more often than not, they're based on what the team already knows. Maybe more people understand MSSQL. Maybe the team already works in AWS and doesn't want to spend weeks relearning Azure just because it's "the better path."
+
+I agree with this completely. 
+
+AI is a tool. It is a fantastic way to get ideas, increase speed and gain new perspectives, but it is NOT the architect. And it shouldn't be the final decision-maker. 
+
+Ask it questions. Utilize its help. But most of all, own your work. 
+
+If you're interested, here's the article: https://lnkd.in/e9qaUeb2. 
+
+Tools don't replace ownership, people do.
+
+Happy coding!
+
+Topic: Passive and Adaptive Workouts
+Date: May 8, 2026
+Post: 
+Why do workout apps still behave like spreadsheets with timers attached?
+
+Seriously.
+
+We have AI systems capable of interpreting language, analyzing patterns, and adapting to users over time… yet most fitness apps still require people to:
+- unlock their phone between sets
+- manually enter reps
+- start rest timers
+- navigate workout screens mid-session
+
+And honestly, workouts are one of the worst environments for constant user interaction.
+Your hands are sweaty.
+You’re breathing hard.
+You’re mentally focused on movement, recovery, or simply trying to finish the workout.
+
+The more I think about it, the more it feels like fitness tech may be approaching the problem backwards.
+
+Instead of building systems around manual data entry, what if workout systems became:
+- passive
+- adaptive
+- conversational
+- context aware
+
+Not VR.
+Not “AI screaming motivational quotes.”
+Not replacing coaches.
+
+More like:
+- voice-first interaction
+- automatic rest timing
+- passive rep/set detection
+- wearable telemetry
+- movement pattern recognition
+- fatigue and recovery modeling over time
+
+Imagine a system where the first few weeks are user-guided while the system learns:
+- pacing
+- fatigue patterns
+- recovery tendencies
+- mobility limitations
+- movement compensations
+- progression capability
+- even motivation patterns
+
+Then eventually starts adapting in real time.
+
+Not just:
+“increase weight.”
+But things like:
+- “Your shoulder mobility has been declining lately. Want to add a quick mobility block before pressing today?”
+- “You seem exhausted today. Want to reduce volume and focus on movement quality instead?”
+- “Your performance trends show you can probably push harder today if you want to.”
+- “You’ve skipped a few workouts. Want a shorter recovery-focused session instead?”
+
+Not:
+“AI replaces human coaching.”
+More:
+“the system quietly reduces friction, adapts to the user, and supports consistency over time.”
+
+Feels like there’s a massive unexplored space between:
+basic workout trackers
+and
+elite biomechanics labs.
+
+Curious what people in fitness tech, wearables, biomechanics, AI systems, or UX think about where this space is heading over the next 5–10 years.
