@@ -3,7 +3,7 @@ import { Github } from 'lucide-react';
 export function Projects() {
   const projects = [
     {
-      title: 'league-api',
+      title: 'League API',
       description: 'REST API for billiards league management with handicap scoring validation, soft delete patterns, and computed standings. Containerized with Docker + PostgreSQL.',
       emoji: '🏆',
       tech: ['C#', 'ASP.NET Core', 'Entity Framework', 'PostgreSQL', 'Docker'],
@@ -12,7 +12,7 @@ export function Projects() {
       github: 'https://github.com/melscodingcave/league-api'
     },
     {
-      title: 'break-and-verify',
+      title: 'Break And Verify',
       description: 'BDD test suite for league-api with 32 passing Gherkin scenarios. Break down features, verify behavior, pocket quality.',
       emoji: '✅',
       tech: ['C#', 'SpecFlow', 'NUnit'],
@@ -21,7 +21,7 @@ export function Projects() {
       github: 'https://github.com/melscodingcave/break-and-verify'
     },
     {
-      title: 'rack-stats',
+      title: 'Rack Stats',
       description: 'Tournament analytics pipeline for a simulated Florida billiards circuit. ETL data processing with interactive Streamlit dashboard. PyTest caught 2 real query bugs.',
       emoji: '📈',
       tech: ['Python', 'SQLAlchemy', 'Pandas', 'Streamlit', 'Plotly'],
@@ -30,7 +30,7 @@ export function Projects() {
       github: 'https://github.com/melscodingcave/rack-stats'
     },
     {
-      title: 'the-practice-log',
+      title: 'The Practice Log',
       description: 'AI-powered billiards practice tracker with shot logging, trend visualization, and Claude API coaching insights. Full CI/CD pipeline with GitHub Actions.',
       emoji: '🎱',
       tech: ['React', 'TypeScript', 'Tailwind', 'Vite', 'Claude API'],
@@ -39,7 +39,7 @@ export function Projects() {
       github: 'https://github.com/melscodingcave/the-practice-log'
     },
     {
-      title: 'cue-qa',
+      title: 'Cue QA',
       description: 'End-to-end test suite for the-practice-log. Automated browser testing with Playwright ensuring quality before every deployment.',
       emoji: '🔬',
       tech: ['Playwright', 'TypeScript', 'GitHub Actions'],
@@ -48,7 +48,7 @@ export function Projects() {
       github: 'https://github.com/melscodingcave/cue-qa'
     },
     {
-      title: 'chalk-it-up',
+      title: 'Chalk It Up',
       description: 'Cross-platform 9-Ball scorekeeper with AI-generated trash talk. Flutter widget testing ensures consistent behavior across iOS and Android.',
       emoji: '📱',
       tech: ['Flutter', 'Dart', 'Claude API'],
