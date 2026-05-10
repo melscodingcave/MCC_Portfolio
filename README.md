@@ -1,73 +1,107 @@
-# React + TypeScript + Vite
+# 🎱 Mel's Coding Cave — Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The source code for [melscodingcave.com](https://melscodingcave.com) — a personal portfolio and engineering blog built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Live Site
 
-## React Compiler
+**[melscodingcave.com](https://melscodingcave.com)**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Framework:** React 19 + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Routing:** React Router v7
+- **Comments:** Giscus (GitHub Discussions)
+- **Contact Form:** Formspree
+- **Deployment:** Netlify
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📁 Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── components/
+│   ├── About.tsx          # About section with billiards connection
+│   ├── Blog.tsx           # Blog section (latest 4 posts)
+│   ├── BlogPage.tsx       # All posts page (/blog)
+│   ├── BlogPost.tsx       # Individual post page (/blog/:slug)
+│   ├── Contact.tsx        # Contact form via Formspree
+│   ├── Experience.tsx     # Professional experience
+│   ├── Footer.tsx         # Footer
+│   ├── GiscusComments.tsx # GitHub Discussions comment widget
+│   ├── Hero.tsx           # Hero section
+│   ├── Navigation.tsx     # Sticky navigation with routing
+│   ├── Projects.tsx       # Portfolio project cards
+│   └── Skills.tsx         # Skills & technologies grid
+├── data/
+│   └── blogPosts.ts       # Blog post content
+└── App.tsx                # Route definitions
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
+
+Open `http://localhost:5173`
+
+---
+
+## 💬 Blog Comments
+
+Comments are powered by [Giscus](https://giscus.app) using GitHub Discussions on this repository. To leave a comment on a blog post, you'll need a GitHub account.
+
+Discussion threads are automatically created per post based on the URL pathname.
+
+---
+
+## 📝 Adding Blog Posts
+
+Blog posts live in `src/data/blogPosts.ts`. Each post follows this structure:
+
+```typescript
+{
+  id: '8',
+  slug: 'your-post-slug',
+  title: 'Your Post Title',
+  category: 'Engineering Philosophy',
+  readTime: '5 min read',
+  date: 'May 2026',
+  summary: 'One sentence summary shown on the card.',
+  tags: ['Tag1', 'Tag2'],
+  content: `
+Your post content here. Supports:
+
+## H2 Headers
+
+Regular paragraphs with **bold text** inline.
+
+- Bullet points
+- Like this
+  `
+}
+```
+
+---
+
+## 🤖 AI-Assisted Development
+
+This site was built with AI assistance — Claude was used as a collaborator throughout development. Every decision was questioned, evaluated, and owned. See the portfolio projects at [github.com/melscodingcave](https://github.com/melscodingcave) for the full AI-assisted development philosophy including `AI-NOTES.md` files per project.
+
+---
+
+## 📫 Contact
+
+- **Email:** melanie.basso@melscodingcave.com
+- **LinkedIn:** [linkedin.com/in/melaniebasso](https://linkedin.com/in/melaniebasso)
+- **GitHub:** [github.com/melscodingcave](https://github.com/melscodingcave)
