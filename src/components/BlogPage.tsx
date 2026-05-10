@@ -14,16 +14,11 @@ export function BlogPage() {
         <div className="min-h-screen bg-[#0A1628] py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <button
-                    onClick={() => {
-                        navigate('/')
-                        setTimeout(() => {
-                            document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' })
-                        }, 100)
-                    }}
+                    onClick={() => navigate(-1)}
                     className="flex items-center gap-2 text-[#3B82F6] hover:text-blue-400 transition-colors mb-12"
                 >
                     <ArrowLeft size={20} />
-                    Back to Home
+                    Back
                 </button>
 
                 <div className="text-center mb-16">
