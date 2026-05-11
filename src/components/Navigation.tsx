@@ -10,9 +10,7 @@ export function Navigation() {
   const navItems = [
     { name: 'Home', href: 'home' },
     { name: 'About', href: 'about' },
-    { name: 'Experience', href: 'experience' },
     { name: 'Projects', href: 'projects' },
-    { name: 'Skills', href: 'skills' },
     { name: 'Blog', href: 'blog' },
     { name: 'Contact', href: 'contact' },
   ]
@@ -50,6 +48,12 @@ export function Navigation() {
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={() => navigate('/work-with-me')}
+                className="px-4 py-2 bg-[#3B82F6] text-white rounded-lg hover:bg-[#2563EB] transition-colors text-sm font-semibold"
+              >
+                Work With Me
+              </button>
             </div>
           </div>
 
@@ -60,6 +64,15 @@ export function Navigation() {
               className="text-gray-300 hover:text-white"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+            <button
+              onClick={() => {
+                setIsOpen(false)
+                navigate('/work-with-me')
+              }}
+              className="block w-full text-left px-3 py-2 text-[#3B82F6] font-semibold hover:text-blue-400 transition-colors"
+            >
+              Work With Me
             </button>
           </div>
         </div>

@@ -20,7 +20,7 @@ export function Blog() {
           {blogPosts.slice(0, 4).map((post) => (
             <div
               key={post.id}
-              onClick={() => navigate(`/blog/${post.slug}`)}
+              onClick={() => navigate(`/blog/${post.slug}`, { state: { from: 'blog' } })}
               className="bg-[#1E3A5F]/30 border border-[#3B82F6]/20 rounded-lg p-6 backdrop-blur-sm hover:border-[#3B82F6]/50 transition-all cursor-pointer hover:shadow-lg hover:shadow-[#3B82F6]/20"
             >
               <div className="flex items-center justify-between mb-3">

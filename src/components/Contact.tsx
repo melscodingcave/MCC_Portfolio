@@ -174,13 +174,6 @@ export function Contact() {
                 I'm always interested in challenging projects that require precision and expertise.
               </p>
             </div>
-            <a
-              href="/Melanie_Basso_Resume.pdf"
-              download
-              className="flex items-center justify-center gap-2 w-full px-6 py-3 border border-[#3B82F6] text-[#3B82F6] rounded-lg hover:bg-[#3B82F6] hover:text-white transition-colors"
-            >
-              Download Resume
-            </a>
           </div>
         </div>
       </div>

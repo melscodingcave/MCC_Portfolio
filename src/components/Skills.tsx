@@ -3,7 +3,7 @@ export function Skills() {
     {
       title: 'Languages',
       skills: [
-        'Python', 'C#/.NET', 'TypeScript', 'SQL', 'Dart/Flutter', 'Bash', 'VBA'
+        'Python', 'C#/.NET', 'JavaScript', 'TypeScript', 'SQL', 'Dart/Flutter', 'Bash', 'VBA'
       ]
     },
     {

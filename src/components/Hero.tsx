@@ -40,13 +40,6 @@ export function Hero() {
             >
               Get In Touch
             </a>
-            <a
-              href="/Melanie_Basso_Resume.pdf"
-              download
-              className="px-8 py-3 border border-gray-500 text-gray-300 rounded-lg hover:border-[#3B82F6] hover:text-[#3B82F6] transition-colors"
-            >
-              Download Resume
-            </a>
           </div>
         </div>
       </div>

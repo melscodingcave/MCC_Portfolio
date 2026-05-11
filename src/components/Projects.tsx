@@ -1,9 +1,13 @@
-import { Github } from 'lucide-react';
+import { Github } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 export function Projects() {
+  const navigate = useNavigate()
+
   const projects = [
     {
       title: 'League API',
+      slug: 'league-api',
       description: 'REST API for billiards league management with handicap scoring validation, soft delete patterns, and computed standings. Containerized with Docker + PostgreSQL.',
       emoji: '🏆',
       tech: ['C#', 'ASP.NET Core', 'Entity Framework', 'PostgreSQL', 'Docker'],
@@ -13,6 +17,7 @@ export function Projects() {
     },
     {
       title: 'Break And Verify',
+      slug: 'break-and-verify',
       description: 'BDD test suite for league-api with 32 passing Gherkin scenarios. Break down features, verify behavior, pocket quality.',
       emoji: '✅',
       tech: ['C#', 'SpecFlow', 'NUnit'],
@@ -22,6 +27,7 @@ export function Projects() {
     },
     {
       title: 'Rack Stats',
+      slug: 'rack-stats',
       description: 'Tournament analytics pipeline for a simulated Florida billiards circuit. ETL data processing with interactive Streamlit dashboard. PyTest caught 2 real query bugs.',
       emoji: '📈',
       tech: ['Python', 'SQLAlchemy', 'Pandas', 'Streamlit', 'Plotly'],
@@ -31,6 +37,7 @@ export function Projects() {
     },
     {
       title: 'The Practice Log',
+      slug: 'the-practice-log',
       description: 'AI-powered billiards practice tracker with shot logging, trend visualization, and Claude API coaching insights. Full CI/CD pipeline with GitHub Actions.',
       emoji: '🎱',
       tech: ['React', 'TypeScript', 'Tailwind', 'Vite', 'Claude API'],
@@ -40,6 +47,7 @@ export function Projects() {
     },
     {
       title: 'Cue QA',
+      slug: 'cue-qa',
       description: 'End-to-end test suite for the-practice-log. Automated browser testing with Playwright ensuring quality before every deployment.',
       emoji: '🔬',
       tech: ['Playwright', 'TypeScript', 'GitHub Actions'],
@@ -49,6 +57,7 @@ export function Projects() {
     },
     {
       title: 'Chalk It Up',
+      slug: 'chalk-it-up',
       description: 'Cross-platform 9-Ball scorekeeper with AI-generated trash talk. Flutter widget testing ensures consistent behavior across iOS and Android.',
       emoji: '📱',
       tech: ['Flutter', 'Dart', 'Claude API'],
@@ -56,7 +65,7 @@ export function Projects() {
       framework: 'Flutter Widget Tests',
       github: 'https://github.com/melscodingcave/chalk-it-up'
     }
-  ];
+  ]
 
   return (
     <section id="projects" className="py-24 bg-[#0A1628]">
@@ -73,7 +82,8 @@ export function Projects() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="bg-[#1E3A5F]/20 border border-[#3B82F6]/30 rounded-lg p-6 hover:border-[#3B82F6] transition-all hover:shadow-lg hover:shadow-[#3B82F6]/20"
+              onClick={() => navigate(`/projects/${project.slug}`, { state: { from: 'projects' } })}
+              className="bg-[#1E3A5F]/20 border border-[#3B82F6]/30 rounded-lg p-6 hover:border-[#3B82F6] transition-all hover:shadow-lg hover:shadow-[#3B82F6]/20 cursor-pointer"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="text-4xl">{project.emoji}</span>
@@ -82,6 +92,7 @@ export function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="p-2 text-gray-400 hover:text-[#3B82F6] transition-colors"
                   >
                     <Github size={20} />
@@ -111,6 +122,6 @@ export function Projects() {
           ))}
         </div>
       </div>
-    </section>
-  );
+    </section >
+  )
 }
