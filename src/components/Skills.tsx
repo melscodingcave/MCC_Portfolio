@@ -9,7 +9,7 @@ export function Skills() {
     {
       title: 'Frontend & Mobile',
       skills: [
-        'React', 'Vite', 'Tailwind CSS', 'Flutter', 'Streamlit'
+        'React', 'Vite', 'Tailwind CSS', 'Flutter', 'Streamlit', 'Bootstrap CSS'
       ]
     },
     {
@@ -21,19 +21,19 @@ export function Skills() {
     {
       title: 'Testing & Automation',
       skills: [
-        'Playwright', 'SpecFlow', 'Gherkin/BDD', 'PyTest', 'Vitest', 'Flutter Widget Tests', 'Swagger', 'Regression Testing'
+        'Playwright', 'SpecFlow', 'Gherkin/BDD', 'PyTest', 'Vitest', 'Flutter Widget Tests', 'Swagger', 'Regression Testing', 'NUnit'
       ]
     },
     {
       title: 'DevOps & Tools',
       skills: [
-        'Docker', 'GitHub Actions', 'Jira', 'Visual Studio', 'VS Code', 'Git'
+        'Docker', 'GitHub Actions', 'Jira', 'Visual Studio', 'VS Code', 'Git', 'Azure'
       ]
     },
     {
       title: 'AI Integration',
       skills: [
-        'Anthropic Claude API', 'Prompt Engineering', 'AI-Assisted Development', 'GitHub Copilot'
+        'Anthropic Claude API', 'Prompt Engineering', 'AI-Assisted Development', 'GitHub Copilot', 'ChatGPT', 'Gemini'
       ]
     }
   ];

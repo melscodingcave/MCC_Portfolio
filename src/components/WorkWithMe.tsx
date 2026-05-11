@@ -9,6 +9,12 @@ export function WorkWithMe() {
         window.scrollTo(0, 0)
     }, [])
 
+    useEffect(() => {
+        const handleContextMenu = (e: MouseEvent) => e.preventDefault()
+        document.addEventListener('contextmenu', handleContextMenu)
+        return () => document.removeEventListener('contextmenu', handleContextMenu)
+    }, [])
+
     const experiences = [
         {
             company: 'Pratt & Whitney',
@@ -100,7 +106,7 @@ export function WorkWithMe() {
             <div className="max-w-5xl mx-auto px-4 py-12 space-y-16">
 
                 {/* Experience */}
-                <div>
+                <div className="select-none">
                     <h2 className="text-3xl text-white font-bold mb-8">
                         Professional Experience
                     </h2>
@@ -143,7 +149,7 @@ export function WorkWithMe() {
                 </div>
 
                 {/* Skills */}
-                <div>
+                <div className="select-none">
                     <h2 className="text-3xl text-white font-bold mb-8">
                         Skills & Technologies
                     </h2>
@@ -173,7 +179,7 @@ export function WorkWithMe() {
                 </div>
 
                 {/* Education */}
-                <div>
+                <div className="select-none">
                     <h2 className="text-3xl text-white font-bold mb-8">Education</h2>
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-[#1E3A5F]/30 border border-[#3B82F6]/20 rounded-lg p-6">
