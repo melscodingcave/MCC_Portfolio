@@ -43,24 +43,33 @@ export function BlogPost() {
                 )
             }
             if (line.trim().startsWith('- ')) {
+                const bulletText = line.trim().replace(/^- /, '')
+                const parts = bulletText.split(/(\*\*.*?\*\*|\*.*?\*)/g)
                 return (
                     <li key={i} className="text-gray-300 ml-6 mb-2 list-disc">
-                        {line.replace('- ', '')}
+                        {parts.map((part, j) => {
+                            if (part.startsWith('**') && part.endsWith('**'))
+                                return <strong key={j} className="text-white font-semibold">{part.slice(2, -2)}</strong>
+                            if (part.startsWith('*') && part.endsWith('*'))
+                                return <em key={j} className="italic">{part.slice(1, -1)}</em>
+                            return part
+                        })}
                     </li>
                 )
             }
             if (line.trim() === '') {
                 return <br key={i} />
             }
-            // Handle inline bold
-            const parts = line.split(/\*\*(.*?)\*\*/g)
+            const parts = line.split(/(\*\*.*?\*\*|\*.*?\*)/g)
             return (
                 <p key={i} className="text-gray-300 mb-4 leading-relaxed">
-                    {parts.map((part, j) =>
-                        j % 2 === 1
-                            ? <strong key={j} className="text-white">{part}</strong>
-                            : part
-                    )}
+                    {parts.map((part, j) => {
+                        if (part.startsWith('**') && part.endsWith('**'))
+                            return <strong key={j} className="text-white font-semibold">{part.slice(2, -2)}</strong>
+                        if (part.startsWith('*') && part.endsWith('*'))
+                            return <em key={j} className="italic">{part.slice(1, -1)}</em>
+                        return part
+                    })}
                 </p>
             )
         })
@@ -119,6 +128,15 @@ export function BlogPost() {
                 </div>
             </div>
             <GiscusComments />
+            <div className="mt-8 pt-6 border-t border-white/10">
+                <button
+                    onClick={() => navigate(-1)}
+                    className="flex items-center gap-2 text-[#3B82F6] hover:text-blue-400 transition-colors"
+                >
+                    <ArrowLeft size={20} />
+                    Back
+                </button>
+            </div>
         </div>
     )
 }

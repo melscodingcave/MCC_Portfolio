@@ -17,7 +17,7 @@ export function Blog() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {blogPosts.slice(0, 4).map((post) => (
+          {[...blogPosts].reverse().slice(0, 4).map((post) => (
             <div
               key={post.id}
               onClick={() => navigate(`/blog/${post.slug}`, { state: { from: 'blog' } })}

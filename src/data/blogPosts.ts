@@ -191,6 +191,56 @@ export const blogPosts: BlogPost[] = [
     },
     {
         id: '4',
+        slug: 'durability-over-bandaid',
+        title: 'Durability Over a Band-Aid: How I Think About Software',
+        category: 'Engineering Philosophy',
+        readTime: '5 min read',
+        date: 'March 2025',
+        summary: 'I stopped thinking about the immediate fix and started thinking about durability. The billiards table taught me that small inputs shape the entire run.',
+        tags: ['Engineering Philosophy', 'Career', 'Software Design', 'Billiards'],
+        content: `
+  When I look back on my career, I don't think I was chasing roles. I was moving closer to understanding how things actually work.
+  
+  - In customer support, I saw where users got stuck and wanted to reduce that friction.
+  - In product support, I started recognizing the same issues resurfacing — different tickets, same root cause.
+  - In QA, I questioned assumptions and flagged the "not a problem yet, but it will be" scenarios.
+  - Now, doing automation and development work, my focus has shifted. Instead of fixing one issue at a time, I look at root causes and make changes that actually hold up.
+  
+  Somewhere along the way, I stopped thinking only about the immediate fix and started thinking about durability.
+  
+  ## The Billiards Parallel
+  
+  I've always been drawn to that mindset. And billiards made it concrete for me.
+  
+  In billiards, you don't just take the next shot — you play position for the ones after it. Angle, speed, spin — small inputs shape the entire run. The difference between a good player and a great one isn't pocket-making ability. It's cue ball control. It's leaving yourself a shot after the shot.
+  
+  Software isn't much different.
+  
+  The fix you implement today either sets you up for the next problem or compounds it. The architecture decision you make now shapes what's possible — and what's painful — two years later.
+  
+  ## What Durability Actually Looks Like
+  
+  Durable solutions tend to share a few characteristics:
+  
+  **They're understandable.** The engineer who reads this code six months from now — probably you — can follow the logic without reverse-engineering it.
+  
+  **They handle failure gracefully.** Not just the happy path, but the edge cases, the unexpected inputs, the conditions that weren't anticipated when the feature was first built.
+  
+  **They're testable.** If you can't write a test for it, that's usually a signal that the design has a problem — not a test problem, a structure problem.
+  
+  **They don't create new problems to solve the current one.** This is the hardest one. The temptation to add complexity in the name of flexibility is real. Durable solutions add as little complexity as possible while solving the actual problem.
+  
+  ## Fixing the Issue vs. Designing What Happens Next
+  
+  Fixing the current issue matters. Designing what happens next matters more.
+  
+  That shift has shaped how I build — and it's shaped the way I evaluate work. Not just "does this work?" but "does this hold up?" Not just "is this correct?" but "will this still be correct under conditions we haven't thought of yet?"
+  
+  Still building with that question in mind.
+      `
+    },
+    {
+        id: '5',
         slug: 'best-route-vs-easiest-route',
         title: 'The Best Route vs The Easiest Route',
         category: 'Engineering Philosophy',
@@ -250,56 +300,6 @@ export const blogPosts: BlogPost[] = [
   Those questions slow you down at the start. They save you enormous amounts of time everywhere else.
   
   That's not the easy route. But it's usually the right one.
-      `
-    },
-    {
-        id: '5',
-        slug: 'durability-over-bandaid',
-        title: 'Durability Over a Band-Aid: How I Think About Software',
-        category: 'Engineering Philosophy',
-        readTime: '5 min read',
-        date: 'March 2025',
-        summary: 'I stopped thinking about the immediate fix and started thinking about durability. The billiards table taught me that small inputs shape the entire run.',
-        tags: ['Engineering Philosophy', 'Career', 'Software Design', 'Billiards'],
-        content: `
-  When I look back on my career, I don't think I was chasing roles. I was moving closer to understanding how things actually work.
-  
-  - In customer support, I saw where users got stuck and wanted to reduce that friction.
-  - In product support, I started recognizing the same issues resurfacing — different tickets, same root cause.
-  - In QA, I questioned assumptions and flagged the "not a problem yet, but it will be" scenarios.
-  - Now, doing automation and development work, my focus has shifted. Instead of fixing one issue at a time, I look at root causes and make changes that actually hold up.
-  
-  Somewhere along the way, I stopped thinking only about the immediate fix and started thinking about durability.
-  
-  ## The Billiards Parallel
-  
-  I've always been drawn to that mindset. And billiards made it concrete for me.
-  
-  In billiards, you don't just take the next shot — you play position for the ones after it. Angle, speed, spin — small inputs shape the entire run. The difference between a good player and a great one isn't pocket-making ability. It's cue ball control. It's leaving yourself a shot after the shot.
-  
-  Software isn't much different.
-  
-  The fix you implement today either sets you up for the next problem or compounds it. The architecture decision you make now shapes what's possible — and what's painful — two years later.
-  
-  ## What Durability Actually Looks Like
-  
-  Durable solutions tend to share a few characteristics:
-  
-  **They're understandable.** The engineer who reads this code six months from now — probably you — can follow the logic without reverse-engineering it.
-  
-  **They handle failure gracefully.** Not just the happy path, but the edge cases, the unexpected inputs, the conditions that weren't anticipated when the feature was first built.
-  
-  **They're testable.** If you can't write a test for it, that's usually a signal that the design has a problem — not a test problem, a structure problem.
-  
-  **They don't create new problems to solve the current one.** This is the hardest one. The temptation to add complexity in the name of flexibility is real. Durable solutions add as little complexity as possible while solving the actual problem.
-  
-  ## Fixing the Issue vs. Designing What Happens Next
-  
-  Fixing the current issue matters. Designing what happens next matters more.
-  
-  That shift has shaped how I build — and it's shaped the way I evaluate work. Not just "does this work?" but "does this hold up?" Not just "is this correct?" but "will this still be correct under conditions we haven't thought of yet?"
-  
-  Still building with that question in mind.
       `
     },
     {
