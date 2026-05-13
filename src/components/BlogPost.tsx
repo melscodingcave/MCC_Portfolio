@@ -60,10 +60,25 @@ export function BlogPost() {
             if (line.trim() === '') {
                 return <br key={i} />
             }
-            const parts = line.split(/(\*\*.*?\*\*|\*.*?\*)/g)
+            const parts = line.split(/(\*\*.*?\*\*|\*.*?\*|\[.*?\]\(.*?\))/g)
             return (
                 <p key={i} className="text-gray-300 mb-4 leading-relaxed">
                     {parts.map((part, j) => {
+                        if (part.match(/^\[.*?\]\(.*?\)$/)) {
+                          const text = part.match(/\[(.*?)\]/)?.[1] || ''
+                          const url = part.match(/\((.*?)\)/)?.[1] || ''
+                          return (
+    
+                              key={j}
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#3B82F6] hover:underline"
+                            >
+                              {text}
+                            </a>
+                          )
+                        }
                         if (part.startsWith('**') && part.endsWith('**'))
                             return <strong key={j} className="text-white font-semibold">{part.slice(2, -2)}</strong>
                         if (part.startsWith('*') && part.endsWith('*'))
