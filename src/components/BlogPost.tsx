@@ -42,7 +42,7 @@ export function BlogPost() {
         if (part.startsWith('**') && part.endsWith('**'))
             return <strong key={key} className="text-white font-semibold">{part.slice(2, -2)}</strong>
         if (part.startsWith('*') && part.endsWith('*'))
-            return <em key={key} className="italic">{part.slice(1, -1)}</em>
+            return <em key={key} className="italic">{renderInline(part.slice(1, -1), key)}</em>
         return part
         })
     }
