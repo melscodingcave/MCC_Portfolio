@@ -25,73 +25,63 @@ export function BlogPost() {
         )
     }
 
-    // Convert markdown-like content to paragraphs
-    const renderContent = (content: string) => {
-    return content.trim().split('\n').map((line, i) => {
-        if (line.trim().startsWith('## ')) {
+    const renderInline = (text: string, keyPrefix: string) => {
+    // Order matters: bold before italic, links before either
+    const parts = text.split(/(\[.*?\]\(.*?\)|\*\*.*?\*\*|\*.*?\*)/g)
+    return parts.map((part, j) => {
+        const key = `${keyPrefix}-${j}`
+        const link = part.match(/^\[(.*?)\]\((.*?)\)$/)
+        if (link) {
             return (
-                <h2 key={i} className="text-2xl text-white font-bold mt-8 mb-4">
-                    {line.trim().replace('## ', '')}
-                </h2>
+                <a key={key} href={link[2]} target="_blank" rel="noopener noreferrer"
+                    className="text-[#3B82F6] hover:underline">
+                    {link[1]}
+                </a>
             )
         }
-        if (line.trim().startsWith('**') && line.trim().endsWith('**')) {
+        if (part.startsWith('**') && part.endsWith('**'))
+            return <strong key={key} className="text-white font-semibold">{part.slice(2, -2)}</strong>
+        if (part.startsWith('*') && part.endsWith('*'))
+            return <em key={key} className="italic">{part.slice(1, -1)}</em>
+        return part
+        })
+    }
+
+    const renderContent = (content: string) => {
+        return content.trim().split('\n').map((line, i) => {
+            const key = `line-${i}`
+    
+            if (line.trim().startsWith('## ')) {
+                return (
+                    <h2 key={key} className="text-2xl text-white font-bold mt-8 mb-4">
+                        {line.trim().slice(3)}
+                    </h2>
+                )
+            }
+            if (line.trim().startsWith('**') && line.trim().endsWith('**')) {
+                return (
+                    <p key={key} className="text-white font-semibold mb-3">
+                        {line.trim().slice(2, -2)}
+                    </p>
+                )
+            }
+            if (line.trim().startsWith('- ')) {
+                return (
+                    <li key={key} className="text-gray-300 ml-6 mb-2 list-disc">
+                        {renderInline(line.trim().slice(2), key)}
+                    </li>
+                )
+            }
+            if (line.trim() === '') {
+                return <br key={key} />
+            }
             return (
-                <p key={i} className="text-white font-semibold mb-3">
-                    {line.replace(/\*\*/g, '')}
+                <p key={key} className="text-gray-300 mb-4 leading-relaxed">
+                    {renderInline(line, key)}
                 </p>
             )
-        }
-        if (line.trim().startsWith('- ')) {
-            const bulletText = line.trim().replace(/^- /, '')
-            const parts = bulletText.split(/(\*\*.*?\*\*|\*.*?\*|\[.*?\]\(.*?\))/g)
-            return (
-                <li key={i} className="text-gray-300 ml-6 mb-2 list-disc">
-                    {parts.map((part, j) => {
-                        if (part.match(/^\[.*?\]\(.*?\)$/)) {
-                            const text = part.match(/\[(.*?)\]/)?.[1] || ''
-                            const url = part.match(/\((.*?)\)/)?.[1] || ''
-                            return (
-                                <a key={j} href={url} target="_blank" rel="noopener noreferrer" className="text-[#3B82F6] hover:underline">
-                                    {text}
-                                </a>
-                            )
-                        }
-                        if (part.startsWith('**') && part.endsWith('**'))
-                            return <strong key={j} className="text-white font-semibold">{part.slice(2, -2)}</strong>
-                        if (part.startsWith('*') && part.endsWith('*'))
-                            return <em key={j} className="italic">{part.slice(1, -1)}</em>
-                        return part
-                    })}
-                </li>
-            )
-        }
-        if (line.trim() === '') {
-            return <br key={i} />
-        }
-        const parts = line.split(/(\*\*.*?\*\*|\*.*?\*|\[.*?\]\(.*?\))/g)
-        return (
-            <p key={i} className="text-gray-300 mb-4 leading-relaxed">
-                {parts.map((part, j) => {
-                    if (part.match(/^\[.*?\]\(.*?\)$/)) {
-                        const text = part.match(/\[(.*?)\]/)?.[1] || ''
-                        const url = part.match(/\((.*?)\)/)?.[1] || ''
-                        return (
-                            <a key={j} href={url} target="_blank" rel="noopener noreferrer" className="text-[#3B82F6] hover:underline">
-                                {text}
-                            </a>
-                        )
-                    }
-                    if (part.startsWith('**') && part.endsWith('**'))
-                        return <strong key={j} className="text-white font-semibold">{part.slice(2, -2)}</strong>
-                    if (part.startsWith('*') && part.endsWith('*'))
-                        return <em key={j} className="italic">{part.slice(1, -1)}</em>
-                    return part
-                })}
-            </p>
-        )
-    })
-}
+        })
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0)
