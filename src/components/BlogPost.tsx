@@ -27,57 +27,35 @@ export function BlogPost() {
 
     // Convert markdown-like content to paragraphs
     const renderContent = (content: string) => {
-        return content.trim().split('\n').map((line, i) => {
-            if (line.trim().startsWith('## ')) {
-                return (
-                    <h2 key={i} className="text-2xl text-white font-bold mt-8 mb-4">
-                        {line.replace('## ', '')}
-                    </h2>
-                )
-            }
-            if (line.trim().startsWith('**') && line.endsWith('**')) {
-                return (
-                    <p key={i} className="text-white font-semibold mb-3">
-                        {line.replace(/\*\*/g, '')}
-                    </p>
-                )
-            }
-            if (line.trim().startsWith('- ')) {
-                const bulletText = line.trim().replace(/^- /, '')
-                const parts = bulletText.split(/(\*\*.*?\*\*|\*.*?\*)/g)
-                return (
-                    <li key={i} className="text-gray-300 ml-6 mb-2 list-disc">
-                        {parts.map((part, j) => {
-                            if (part.startsWith('**') && part.endsWith('**'))
-                                return <strong key={j} className="text-white font-semibold">{part.slice(2, -2)}</strong>
-                            if (part.startsWith('*') && part.endsWith('*'))
-                                return <em key={j} className="italic">{part.slice(1, -1)}</em>
-                            return part
-                        })}
-                    </li>
-                )
-            }
-            if (line.trim() === '') {
-                return <br key={i} />
-            }
-            const parts = line.split(/(\*\*.*?\*\*|\*.*?\*|\[.*?\]\(.*?\))/g)
+    return content.trim().split('\n').map((line, i) => {
+        if (line.trim().startsWith('## ')) {
             return (
-                <p key={i} className="text-gray-300 mb-4 leading-relaxed">
+                <h2 key={i} className="text-2xl text-white font-bold mt-8 mb-4">
+                    {line.trim().replace('## ', '')}
+                </h2>
+            )
+        }
+        if (line.trim().startsWith('**') && line.trim().endsWith('**')) {
+            return (
+                <p key={i} className="text-white font-semibold mb-3">
+                    {line.replace(/\*\*/g, '')}
+                </p>
+            )
+        }
+        if (line.trim().startsWith('- ')) {
+            const bulletText = line.trim().replace(/^- /, '')
+            const parts = bulletText.split(/(\*\*.*?\*\*|\*.*?\*|\[.*?\]\(.*?\))/g)
+            return (
+                <li key={i} className="text-gray-300 ml-6 mb-2 list-disc">
                     {parts.map((part, j) => {
                         if (part.match(/^\[.*?\]\(.*?\)$/)) {
-                          const text = part.match(/\[(.*?)\]/)?.[1] || ''
-                          const url = part.match(/\((.*?)\)/)?.[1] || ''
-                          return (
-    
-                              key={j}
-                              href={url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-[#3B82F6] hover:underline"
-                            >
-                              {text}
-                            </a>
-                          )
+                            const text = part.match(/\[(.*?)\]/)?.[1] || ''
+                            const url = part.match(/\((.*?)\)/)?.[1] || ''
+                            return (
+                                <a key={j} href={url} target="_blank" rel="noopener noreferrer" className="text-[#3B82F6] hover:underline">
+                                    {text}
+                                </a>
+                            )
                         }
                         if (part.startsWith('**') && part.endsWith('**'))
                             return <strong key={j} className="text-white font-semibold">{part.slice(2, -2)}</strong>
@@ -85,10 +63,35 @@ export function BlogPost() {
                             return <em key={j} className="italic">{part.slice(1, -1)}</em>
                         return part
                     })}
-                </p>
+                </li>
             )
-        })
-    }
+        }
+        if (line.trim() === '') {
+            return <br key={i} />
+        }
+        const parts = line.split(/(\*\*.*?\*\*|\*.*?\*|\[.*?\]\(.*?\))/g)
+        return (
+            <p key={i} className="text-gray-300 mb-4 leading-relaxed">
+                {parts.map((part, j) => {
+                    if (part.match(/^\[.*?\]\(.*?\)$/)) {
+                        const text = part.match(/\[(.*?)\]/)?.[1] || ''
+                        const url = part.match(/\((.*?)\)/)?.[1] || ''
+                        return (
+                            <a key={j} href={url} target="_blank" rel="noopener noreferrer" className="text-[#3B82F6] hover:underline">
+                                {text}
+                            </a>
+                        )
+                    }
+                    if (part.startsWith('**') && part.endsWith('**'))
+                        return <strong key={j} className="text-white font-semibold">{part.slice(2, -2)}</strong>
+                    if (part.startsWith('*') && part.endsWith('*'))
+                        return <em key={j} className="italic">{part.slice(1, -1)}</em>
+                    return part
+                })}
+            </p>
+        )
+    })
+}
 
     useEffect(() => {
         window.scrollTo(0, 0)
