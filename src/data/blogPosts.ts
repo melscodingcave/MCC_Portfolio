@@ -421,5 +421,66 @@ export const blogPosts: BlogPost[] = [
   
   Curious what people in fitness tech, wearables, biomechanics, AI systems, or UX think about where this space is heading.
       `
-    }
+    },
+    {
+  id: '8',
+  slug: 'millennials-perspective-on-ai',
+  title: "A Millennial's Perspective on AI: Tool, Not Replacement",
+  category: 'AI Development',
+  readTime: '6 min read',
+  date: 'May 2026',
+  summary: "They say millennials are the last generation that truly remembers life before technology consumed it. Here's what that perspective means for how I think about AI in software development.",
+  tags: ['AI', 'Engineering Philosophy', 'Career', 'Technology'],
+  content: `
+They say millennials are the last generation that truly remembers what life was like before technology consumed it. I don't just remember it — I lived it, in full detail.
+
+I remember softball games where the biggest distraction was keeping score on a paper sheet someone's mom was holding. Afterward, we'd pile into the ice cream parlor, argue over what flavors to get, and get it all over each other in the process. Nobody was looking at a phone. There were no phones to look at. Just a group of kids being loud and present and completely, unselfconsciously *there*.
+
+I remember the specific thrill of buying a prepaid cell phone with free nighttime minutes — secretly, obviously — so I could text friends when I was supposed to be asleep. I remember the equally specific humiliation of getting it taken away when my parents found out. I remember dual-booting my PC with Linux and Windows because I wanted to dig into the kernel *and* keep playing The Sims, and I remember my dad installing every parental control known to man after he had to rescue my computer from yet another virus I'd somehow caught.
+
+I was embarrassed. I was grounded. And here's what I appreciate most in retrospect: **none of it was documented.** No screenshots. No posts. No threads. Those moments existed, and then they were just memories — mine and my family's — and nothing else.
+
+*Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_softwaredevelopment-ai-techindustry-share-7460394757748600833-iNh4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
+
+## Growing Up and Falling in Love with Code
+
+I eventually channeled all of that early curiosity into a real career in technology. But it wasn't until I found software development and coding that something fully clicked. There's a particular kind of satisfaction in building something from scratch — in writing logic that works, in debugging something that didn't, in finally understanding a concept you'd been circling for weeks. I was learning languages, building projects, and starting to think seriously about what it means to engineer software well.
+
+And right in the middle of all of that, AI stepped onto the scene in a serious way.
+
+## AI as a Learning Tool — Not Just a Productivity Hack
+
+The conversation around AI in tech tends to default quickly to productivity and efficiency: it generates code faster, it automates repetitive tasks, it shortens timelines. All of that is true. But what caught me off guard was something less expected — **AI has become one of the most powerful learning tools I've encountered.**
+
+When you're working through a problem you don't fully understand yet, you can think out loud with an AI and get a response that meets you where you are. You can ask it to explain a concept three different ways until one of them lands. You can build test coverage around edge cases you hadn't thought of. You can get a second set of eyes on dead code you missed, or ask it to walk you through a newer concept in frontend development that you haven't had time to dig into yet.
+
+It doesn't replace the learning — it accelerates and deepens it. There's a meaningful difference.
+
+For someone in the middle of building out a technical skillset, that's not a small thing. It's genuinely changed how I learn and how I work.
+
+## The Complications Are Real
+
+That said, pretending AI isn't creating serious disruption would be dishonest.
+
+The infrastructure demands are significant — the computation power and architecture required to run these systems at scale is enormous, and that cost is being distributed in ways we're still understanding. The environmental footprint alone is a legitimate concern worth tracking.
+
+And then there's the job displacement conversation, which has become impossible to ignore. "AI can do their job" has turned into a justification for layoffs across the industry, and the hype cycle is accelerating faster than our ability to evaluate it clearly. It raises a real question that I find myself sitting with:
+
+**Are we overvaluing the tool — or undervaluing the people who have spent years building the knowledge, judgment, and intuition that actually make things work?**
+
+The developers who've been writing software for a decade bring something that can't be prompted into existence. They know why a particular architectural decision was made three years ago. They know what the edge case looks like in production. They know when something feels wrong before they can fully articulate why. That's not knowledge a model is trained on. That's experience.
+
+## Where I Land
+
+AI will always have a place now. That's not a question. It makes things faster. It helps surface things we might have missed. It extends what individual developers can do. In the right hands, it's a genuinely powerful force multiplier.
+
+But it is not a replacement for human reasoning. It doesn't carry context the way people do. It doesn't have the kind of judgment that comes from living through a project, a failure, a pivot, a launch. It doesn't understand what's at stake — for the user, for the team, for the business — the way a human being does.
+
+The right frame isn't AI versus humans. It's AI *and* humans, with a clear-eyed understanding of what each brings to the table.
+
+We should keep using it as the powerful tool it is. We should keep learning from it, building with it, and pushing what's possible with it. But we should not lose sight of what no tool — however sophisticated — can replicate: the human being on the other side of it.
+
+*👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_softwaredevelopment-ai-techindustry-share-7460394757748600833-iNh4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
+  `
+}
 ]
