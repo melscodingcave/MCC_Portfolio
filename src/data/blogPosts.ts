@@ -482,7 +482,7 @@ We should keep using it as the powerful tool it is. We should keep learning from
 
 *👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_softwaredevelopment-ai-techindustry-share-7460394757748600833-iNh4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
   `
-}
+},
     {
     id: '9',
     slug: 'documentation-foundation-not-afterthought',
