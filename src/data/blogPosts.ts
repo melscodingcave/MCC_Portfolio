@@ -483,4 +483,66 @@ We should keep using it as the powerful tool it is. We should keep learning from
 *👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_softwaredevelopment-ai-techindustry-share-7460394757748600833-iNh4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
   `
 }
+    {
+    id: '9',
+    slug: 'documentation-foundation-not-afterthought',
+    title: 'Documentation Is the Foundation, Not the Afterthought',
+    category: 'Engineering Philosophy',
+    readTime: '5 min read',
+    date: 'May 2026',
+    summary: "Most companies treat documentation as optional. It isn't. Without it, training takes years instead of months, bugs go unresolved, and decisions become mysteries — even to the people who made them.",
+    tags: ['Documentation', 'Engineering Philosophy', 'Software Engineering', 'Engineering Culture', 'Tech Leadership'],
+    content: `
+Documentation is the foundation of everything in the digital age.
+
+Every system you build, every process you define, every decision you make — documentation is what transforms individual knowledge into institutional knowledge. It's what allows teams to scale, onboarding to take months instead of years, and bugs to get resolved before they become crises.
+
+So why do so many companies still treat it as optional?
+
+*Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_documentation-softwareengineering-engineeringculture-share-7462128378591203329-4Iif?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7mkLP1aXml_3EABYCZLjDo).*
+
+## The Spectrum I've Seen
+
+I've seen the full spectrum across my career. Formal user manuals and work instructions on one end. A single comment buried in a 1,000-line JavaScript file — reflecting a developer's frustration more than the code's intent — on the other.
+
+What stays consistent across all of it: even when one person advocates for documentation, most people treat it as a nuisance. Tedious. Unnecessary. Something to do after the real work is done.
+
+But the real work *is* documentation.
+
+## What Gets Lost Without It
+
+The cost of undocumented systems isn't always immediately visible. It compounds quietly until it isn't quiet anymore.
+
+- Bugs that could have been prevented if a stakeholder conversation had been written down
+- Architectural decisions that made perfect sense at the time and are now a mystery to everyone, including the person who made them
+- Training that drags on for a year because nothing was ever formalized
+- Onboarding that takes three times as long as it should
+
+These aren't hypotheticals. They're patterns I've watched repeat across industries — healthcare, aerospace, enterprise software. The environment changes. The outcome doesn't.
+
+## The AI-Speed Problem
+
+This concern is sharper now with the pace at which new companies are being stood up, many of them powered by AI that can generate code, content, and product faster than most teams can review it.
+
+I find myself wondering: how many of those teams documented the decisions behind what they built? How many established a foundation before shipping?
+
+My instinct says not many. And my prediction is that in a year or two, the ones who didn't will show it.
+
+**You can't scale what you haven't thought through.** You can't maintain what you haven't explained. You can't grow a team, a product, or a company on undocumented assumptions.
+
+Moving fast is valuable. But speed without a foundation isn't momentum — it's drift. The companies that survive aren't the ones who shipped fastest. They're the ones who built something that could be understood, maintained, and handed to the next person without starting from scratch.
+
+## Documentation as Engineering Discipline
+
+I've started thinking about documentation less as a deliverable and more as a discipline — the same way testing is a discipline, or code review is a discipline.
+
+It's not something you do at the end. It's something you do throughout, because the act of documenting a decision forces clarity about why you made it. If you can't explain the reasoning, that's a signal worth paying attention to.
+
+The teams I've respected most aren't the ones who moved the fastest. They're the ones who could answer the question "why did we do it this way?" six months after the fact — because someone wrote it down.
+
+That's not bureaucracy. That's engineering.
+
+*👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_documentation-softwareengineering-engineeringculture-share-7462128378591203329-4Iif?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7mkLP1aXml_3EABYCZLjDo)*
+    `
+},
 ]
