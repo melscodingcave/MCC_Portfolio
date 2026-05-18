@@ -30,6 +30,8 @@ export const blogPosts: BlogPost[] = [
   So I tested it myself.
   
   Not copy/paste coding. More like pressure-testing design decisions, generating scaffolding to focus on structure, and surfacing edge cases earlier.
+
+  *Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_ive-been-intentionally-practicing-what-people-activity-7435729492586881024-xTaW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
   
   **The biggest shift wasn't speed. It was clarity.**
   
@@ -67,7 +69,8 @@ export const blogPosts: BlogPost[] = [
   Ask it questions. Use its help. But own your work.
   
   Tools don't replace ownership. People do.
-      `
+      *👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_ive-been-intentionally-practicing-what-people-activity-7435729492586881024-xTaW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
+    `
     },
     {
         id: '2',
@@ -89,6 +92,8 @@ export const blogPosts: BlogPost[] = [
   - "No alerts" isn't the same as "no risk"
   
   I've become less interested in the number and more interested in what produced it.
+
+  *Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_working-in-qa-and-spending-a-lot-of-time-activity-7429348559671492608-9rCj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
   
   ## The Questions That Actually Matter
   
@@ -128,6 +133,8 @@ export const blogPosts: BlogPost[] = [
   Don't trust the number. Understand the system that produced it.
   
   That's the shift QA gave me — and it's shaped how I approach every problem I work on.
+
+  *👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_working-in-qa-and-spending-a-lot-of-time-activity-7429348559671492608-9rCj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
       `
     },
     {
@@ -143,6 +150,8 @@ export const blogPosts: BlogPost[] = [
   I've been spending time thinking through what it actually takes to add automation into a legacy codebase.
   
   It's one thing to automate something built with testing in mind. It's another when the original design didn't account for it at all.
+
+  *Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_ive-been-spending-some-time-thinking-through-activity-7431758172157104128-zc9o?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
   
   ## The Wrong Questions
   
@@ -187,6 +196,8 @@ export const blogPosts: BlogPost[] = [
   The hardest part of legacy automation isn't technical. It's having the patience to understand the system before trying to change it.
   
   That's the kind of engineering problem I enjoy most.
+
+  *👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_ive-been-spending-some-time-thinking-through-activity-7431758172157104128-zc9o?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
       `
     },
     {
@@ -207,6 +218,8 @@ export const blogPosts: BlogPost[] = [
   - Now, doing automation and development work, my focus has shifted. Instead of fixing one issue at a time, I look at root causes and make changes that actually hold up.
   
   Somewhere along the way, I stopped thinking only about the immediate fix and started thinking about durability.
+
+  *Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_when-i-look-back-on-my-career-i-dont-think-activity-7429967322544648192-V-we?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
   
   ## The Billiards Parallel
   
@@ -237,6 +250,8 @@ export const blogPosts: BlogPost[] = [
   That shift has shaped how I build — and it's shaped the way I evaluate work. Not just "does this work?" but "does this hold up?" Not just "is this correct?" but "will this still be correct under conditions we haven't thought of yet?"
   
   Still building with that question in mind.
+
+  *👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_when-i-look-back-on-my-career-i-dont-think-activity-7429967322544648192-V-we?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
       `
     },
     {
@@ -256,6 +271,8 @@ export const blogPosts: BlogPost[] = [
   Most people choose the former. My answer wouldn't be so straightforward.
   
   **My response would be a question: which one is actually needed, and why?**
+
+  *Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_ive-had-a-coworker-who-took-the-easy-way-activity-7448800708511903744-oF2B?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
   
   ## The Speed Trap
   
@@ -300,6 +317,8 @@ export const blogPosts: BlogPost[] = [
   Those questions slow you down at the start. They save you enormous amounts of time everywhere else.
   
   That's not the easy route. But it's usually the right one.
+
+  *👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_ive-had-a-coworker-who-took-the-easy-way-activity-7448800708511903744-oF2B?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
       `
     },
     {
@@ -317,6 +336,8 @@ export const blogPosts: BlogPost[] = [
   A process that takes hours. A tool that doesn't scale. A workflow with built-in bottlenecks. We adapt to them. We work around them. Eventually, we stop noticing them.
   
   But every so often, it's worth stepping back and asking: is there a better way this could work?
+
+  *Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_one-thing-ive-been-reflecting-on-recently-activity-7440390320376295424-cQ4j?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
   
   ## The Things That Started as Observations
   
@@ -354,6 +375,8 @@ export const blogPosts: BlogPost[] = [
   The highest-impact work often comes from improving systems, not just executing within them.
   
   Start with the observation. See where it leads.
+
+  *👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_one-thing-ive-been-reflecting-on-recently-activity-7440390320376295424-cQ4j?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
       `
     },
     {
@@ -373,6 +396,8 @@ export const blogPosts: BlogPost[] = [
   Workouts are one of the worst environments for constant user interaction. Your hands are sweaty. You're breathing hard. You're mentally focused on movement, recovery, or simply trying to finish.
   
   The more I think about it, the more it feels like fitness tech may be approaching the problem backwards.
+
+  *Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_why-do-workout-apps-still-behave-like-spreadsheets-activity-7458488486929694720-6kkF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
   
   ## The Backwards Assumption
   
@@ -420,6 +445,8 @@ export const blogPosts: BlogPost[] = [
   That's the gap. And it feels like the right kind of engineering problem.
   
   Curious what people in fitness tech, wearables, biomechanics, AI systems, or UX think about where this space is heading.
+
+  *👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_why-do-workout-apps-still-behave-like-spreadsheets-activity-7458488486929694720-6kkF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
       `
     },
     {
