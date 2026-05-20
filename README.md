@@ -1,107 +1,36 @@
-# 🎱 Mel's Coding Cave — Portfolio Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-The source code for [melscodingcave.com](https://melscodingcave.com) — a personal portfolio and engineering blog built with React, TypeScript, and Vite.
+## Getting Started
 
----
-
-## 🌐 Live Site
-
-**[melscodingcave.com](https://melscodingcave.com)**
-
----
-
-## 🛠 Tech Stack
-
-- **Framework:** React 19 + TypeScript
-- **Build Tool:** Vite
-- **Styling:** Tailwind CSS
-- **Routing:** React Router v7
-- **Comments:** Giscus (GitHub Discussions)
-- **Contact Form:** Formspree
-- **Deployment:** Netlify
-
----
-
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── About.tsx          # About section with billiards connection
-│   ├── Blog.tsx           # Blog section (latest 4 posts)
-│   ├── BlogPage.tsx       # All posts page (/blog)
-│   ├── BlogPost.tsx       # Individual post page (/blog/:slug)
-│   ├── Contact.tsx        # Contact form via Formspree
-│   ├── Experience.tsx     # Professional experience
-│   ├── Footer.tsx         # Footer
-│   ├── GiscusComments.tsx # GitHub Discussions comment widget
-│   ├── Hero.tsx           # Hero section
-│   ├── Navigation.tsx     # Sticky navigation with routing
-│   ├── Projects.tsx       # Portfolio project cards
-│   └── Skills.tsx         # Skills & technologies grid
-├── data/
-│   └── blogPosts.ts       # Blog post content
-└── App.tsx                # Route definitions
-```
-
----
-
-## 🚀 Getting Started
+First, run the development server:
 
 ```bash
-npm install
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Open `http://localhost:5173`
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 💬 Blog Comments
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Comments are powered by [Giscus](https://giscus.app) using GitHub Discussions on this repository. To leave a comment on a blog post, you'll need a GitHub account.
+## Learn More
 
-Discussion threads are automatically created per post based on the URL pathname.
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 📝 Adding Blog Posts
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Blog posts live in `src/data/blogPosts.ts`. Each post follows this structure:
+## Deploy on Vercel
 
-```typescript
-{
-  id: '8',
-  slug: 'your-post-slug',
-  title: 'Your Post Title',
-  category: 'Engineering Philosophy',
-  readTime: '5 min read',
-  date: 'May 2026',
-  summary: 'One sentence summary shown on the card.',
-  tags: ['Tag1', 'Tag2'],
-  content: `
-Your post content here. Supports:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## H2 Headers
-
-Regular paragraphs with **bold text** inline.
-
-- Bullet points
-- Like this
-  `
-}
-```
-
----
-
-## 🤖 AI-Assisted Development
-
-This site was built with AI assistance — Claude was used as a collaborator throughout development. Every decision was questioned, evaluated, and owned. See the portfolio projects at [github.com/melscodingcave](https://github.com/melscodingcave) for the full AI-assisted development philosophy including `AI-NOTES.md` files per project.
-
----
-
-## 📫 Contact
-
-- **Email:** melanie.basso@melscodingcave.com
-- **LinkedIn:** [linkedin.com/in/melaniebasso](https://linkedin.com/in/melaniebasso)
-- **GitHub:** [github.com/melscodingcave](https://github.com/melscodingcave)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

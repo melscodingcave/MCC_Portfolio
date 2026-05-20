@@ -1,0 +1,63 @@
+---
+title: "Outputs Lie: What QA Taught Me About Trusting Data"
+slug: "outputs-lie-what-qa-taught-me-about-trusting-data"
+category: "Engineering Philosophy"
+readTime: "5 min read"
+date: "March 2025"
+summary: "A passing test doesn't prove system resilience. A clean dashboard doesn't guarantee clean inputs. Working in QA taught me to question the structure behind the output."
+tags: ["QA", "Data", "Engineering Philosophy", "Testing"]
+---
+
+Working in QA — and spending a lot of time around data — taught me something early:
+  
+  **Outputs lie. Or at least, they mislead without context.**
+  
+  - A passing test doesn't prove system resilience
+  - A clean dashboard doesn't guarantee clean inputs
+  - A defect rarely starts where it surfaces
+  - "No alerts" isn't the same as "no risk"
+  
+  I've become less interested in the number and more interested in what produced it.
+
+  *Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_working-in-qa-and-spending-a-lot-of-time-activity-7429348559671492608-9rCj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
+  
+  ## The Questions That Actually Matter
+  
+  When I look at a test result, a metric, or a system output, the surface value is almost never the interesting part. The interesting part is:
+  
+  - What assumptions were made to produce this?
+  - What dependencies shifted since we last validated this?
+  - What edge case hasn't been exercised yet?
+  - What would have to be true for this to be wrong?
+  
+  These aren't cynical questions. They're engineering questions. The difference between a system you trust and a system you *think* you trust is usually found somewhere in the answers.
+  
+  ## Defects Don't Start Where They Surface
+  
+  This is the one that took me longest to internalize.
+  
+  In distributed systems especially, the place a defect shows up is rarely the place it originated. A billing error might trace back to a data mapping issue that's been silently wrong for months. An API timeout might be caused by a query that worked fine until the dataset hit a certain size.
+  
+  QA work taught me to trace backwards — to treat every defect as a symptom first, and a cause second. That mindset changes how you investigate, how you write tests, and how you design systems.
+  
+  ## Trust Comes From Understanding Behavior Under Stress
+  
+  Reports don't build trust. Understanding does.
+  
+  I've seen teams feel confident about a system because their dashboards were green — right up until the moment something unexpected happened and nobody understood why. The green dashboard didn't reflect the system's actual behavior under load, under edge cases, or under conditions the tests hadn't anticipated.
+  
+  Real trust in a system comes from knowing how it behaves when things go wrong. That means:
+  
+  - Testing the unhappy paths as thoroughly as the happy ones
+  - Understanding failure modes before they're triggered in production
+  - Treating "no known issues" as a starting point for investigation, not a conclusion
+  
+  ## The Practical Shift
+  
+  Whether it's a test result or a business metric, the real engineering work is understanding the structure behind the output.
+  
+  Don't trust the number. Understand the system that produced it.
+  
+  That's the shift QA gave me — and it's shaped how I approach every problem I work on.
+
+  *👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_working-in-qa-and-spending-a-lot-of-time-activity-7429348559671492608-9rCj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*

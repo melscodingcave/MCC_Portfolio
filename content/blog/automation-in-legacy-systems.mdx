@@ -1,0 +1,61 @@
+---
+title: "Automation in Legacy Systems: The Questions Nobody Asks"
+slug: "automation-in-legacy-systems"
+category: "Test Automation"
+readTime: "5 min read"
+date: "March 2025"
+summary: "Adding automation to a legacy codebase isn't about tools. It's about understanding the structure well enough to introduce change responsibly."
+tags: ["Automation", "Legacy Systems", "Testing", "Engineering"]
+---
+
+I've been spending time thinking through what it actually takes to add automation into a legacy codebase.
+  
+  It's one thing to automate something built with testing in mind. It's another when the original design didn't account for it at all.
+
+  *Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_ive-been-spending-some-time-thinking-through-activity-7431758172157104128-zc9o?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
+  
+  ## The Wrong Questions
+  
+  Most conversations about legacy automation start in the wrong place:
+  
+  - "Which framework should we use?"
+  - "What's our coverage target?"
+  - "How long will this take?"
+  
+  These aren't bad questions. They're just premature. The more important questions come first.
+  
+  ## The Right Questions
+  
+  **Where can you introduce seams without changing behavior?**
+  
+  A seam is a place in the code where you can change behavior without modifying the code itself. In legacy systems, seams are often hidden — buried in tight coupling, global state, or direct dependencies that make isolation nearly impossible. Finding them requires reading the system carefully before writing a single test.
+  
+  **How do you improve visibility without overengineering it?**
+  
+  The temptation in legacy automation work is to build a beautiful, comprehensive framework from scratch. Resist it. The goal isn't to build the perfect test suite — it's to add enough visibility that you can change the system with confidence. Start small. Add value incrementally.
+  
+  **What's worth adapting — and what should remain untouched?**
+  
+  Not everything in a legacy system is wrong. A lot of it reflects decisions made under real constraints — performance requirements, team knowledge, infrastructure limitations. The goal isn't to rewrite it. The goal is to understand it well enough to layer in testability without breaking what works.
+  
+  ## Legacy Systems Aren't "Bad"
+  
+  This is worth saying directly: legacy systems aren't failures. They're systems that survived.
+  
+  They reflect years of decisions made under different constraints, with different information, by different teams. Treating them as enemies to be defeated usually produces worse outcomes than treating them as systems to be understood.
+  
+  The engineers who do this work well are the ones who approach legacy code with curiosity instead of contempt.
+  
+  ## Automation at This Stage
+  
+  Coverage numbers are almost meaningless in legacy automation work. What matters is:
+  
+  - Understanding the structure well enough to know where tests will actually catch regressions
+  - Introducing automation in places where the cost of a bug is highest
+  - Building confidence incrementally rather than promising comprehensive coverage upfront
+  
+  The hardest part of legacy automation isn't technical. It's having the patience to understand the system before trying to change it.
+  
+  That's the kind of engineering problem I enjoy most.
+
+  *👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_ive-been-spending-some-time-thinking-through-activity-7431758172157104128-zc9o?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
