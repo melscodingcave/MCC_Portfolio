@@ -69,15 +69,6 @@ export function BlogPost({ post, mdxContent }: BlogPostProps) {
 
             <GiscusComments />
 
-            <div className="text-center mt-8 pt-6">
-                <button
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="text-[#3B82F6] hover:text-blue-400 transition-colors text-sm"
-                >
-                    ↑ Back to Top
-                </button>
-            </div>
-
             <div className="mt-8 pt-6 border-t border-white/10">
                 <button
                     onClick={() => router.back()}

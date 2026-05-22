@@ -1,9 +1,10 @@
 'use client'
 
-import { ArrowLeft, Clock } from 'lucide-react'
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
 import type { PostFrontmatter } from '@/lib/posts'
+import { ArrowLeft, Clock } from 'lucide-react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 interface BlogPageProps {
     posts: PostFrontmatter[]
@@ -11,10 +12,19 @@ interface BlogPageProps {
 
 export function BlogPage({ posts }: BlogPageProps) {
     const router = useRouter()
+    const [activeTag, setActiveTag] = useState<string | null>(null)
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+
+    const allTags = Array.from(
+        new Set(posts.flatMap(post => post.tags))
+    ).sort()
+
+    const filteredPosts = activeTag
+        ? posts.filter(post => post.tags.includes(activeTag))
+        : posts
 
     return (
         <div className="min-h-screen bg-[#0A1628] py-24">
@@ -27,7 +37,7 @@ export function BlogPage({ posts }: BlogPageProps) {
                     Back
                 </button>
 
-                <div className="text-center mb-16">
+                <div className="text-center mb-12">
                     <h1 className="text-4xl text-white font-bold mb-4">All Posts</h1>
                     <div className="h-1 w-20 bg-[#3B82F6] mx-auto mb-4" />
                     <p className="text-gray-300 max-w-2xl mx-auto">
@@ -35,12 +45,43 @@ export function BlogPage({ posts }: BlogPageProps) {
                     </p>
                 </div>
 
+                {/* Tag Filter */}
+                <div className="flex flex-wrap gap-2 justify-center mb-10">
+                    <button
+                        onClick={() => setActiveTag(null)}
+                        className={`px-4 py-1.5 rounded-full text-sm transition-colors ${activeTag === null
+                            ? 'bg-[#3B82F6] text-white'
+                            : 'bg-[#1E3A5F]/40 text-gray-300 hover:text-[#3B82F6] border border-[#3B82F6]/20'
+                            }`}
+                    >
+                        All
+                    </button>
+                    {allTags.map(tag => (
+                        <button
+                            key={tag}
+                            onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+                            className={`px-4 py-1.5 rounded-full text-sm transition-colors ${activeTag === tag
+                                ? 'bg-[#3B82F6] text-white'
+                                : 'bg-[#1E3A5F]/40 text-gray-300 hover:text-[#3B82F6] border border-[#3B82F6]/20'
+                                }`}
+                        >
+                            {tag}
+                        </button>
+                    ))}
+                </div>
+
+                {/* Post count */}
+                <p className="text-gray-400 text-sm text-center mb-8">
+                    {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'}
+                    {activeTag ? ` tagged "${activeTag}"` : ''}
+                </p>
+
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {posts.map((post) => (
-                        <div
+                    {filteredPosts.map((post) => (
+                        <Link
                             key={post.slug}
-                            onClick={() => router.push(`/blog/${post.slug}`)}
-                            className="bg-[#1E3A5F]/30 border border-[#3B82F6]/20 rounded-lg p-6 backdrop-blur-sm hover:border-[#3B82F6]/50 transition-all cursor-pointer hover:shadow-lg hover:shadow-[#3B82F6]/20"
+                            href={`/blog/${post.slug}`}
+                            className="bg-[#1E3A5F]/30 border border-[#3B82F6]/20 rounded-lg p-6 backdrop-blur-sm hover:border-[#3B82F6]/50 transition-all hover:shadow-lg hover:shadow-[#3B82F6]/20 block"
                         >
                             <div className="flex items-center justify-between mb-3">
                                 <span className="px-3 py-1 bg-[#3B82F6]/20 text-[#3B82F6] rounded-full text-sm">
@@ -49,6 +90,16 @@ export function BlogPage({ posts }: BlogPageProps) {
                             </div>
                             <h3 className="text-xl text-white mb-3">{post.title}</h3>
                             <p className="text-gray-300 mb-4 text-sm">{post.summary}</p>
+                            <div className="flex flex-wrap gap-1 mb-4">
+                                {post.tags.map(tag => (
+                                    <span
+                                        key={tag}
+                                        className="px-2 py-0.5 text-xs bg-[#0A1628] text-gray-400 rounded border border-white/10"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
                             <div className="flex items-center gap-4 text-gray-400 text-sm">
                                 <div className="flex items-center gap-1">
                                     <Clock size={16} />
@@ -56,18 +107,8 @@ export function BlogPage({ posts }: BlogPageProps) {
                                 </div>
                                 <span>{post.date}</span>
                             </div>
-                        </div>
+                        </Link>
                     ))}
-                </div>
-
-                {/* Back to Top */}
-                <div className="text-center mt-16">
-                    <button
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        className="text-[#3B82F6] hover:text-blue-400 transition-colors text-sm"
-                    >
-                        ↑ Back to Top
-                    </button>
                 </div>
             </div>
         </div>

@@ -1,71 +1,39 @@
-'use client'
+"use client"
 
-import { Github } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import { Github } from "lucide-react"
+import Link from "next/link"
 
 export function Projects() {
-  const router = useRouter()
-
   const projects = [
     {
-      title: 'League API',
-      slug: 'league-api',
-      description: 'REST API for billiards league management with handicap scoring validation, soft delete patterns, and computed standings. Containerized with Docker + PostgreSQL.',
-      emoji: '🏆',
-      tech: ['C#', 'ASP.NET Core', 'Entity Framework', 'PostgreSQL', 'Docker'],
-      tests: '32 scenarios',
-      framework: 'SpecFlow/Gherkin',
-      github: 'https://github.com/melscodingcave/league-api'
+      title: "League API",
+      slug: "league-api",
+      description: "REST API for billiards league management with handicap scoring validation, soft delete patterns, and computed standings. Paired with Break & Verify — 32 BDD scenarios across Players, Matches, and Standings.",
+      emoji: "🏆",
+      tech: ["C#", "ASP.NET Core", "Entity Framework", "PostgreSQL", "Docker"],
+      tests: "32 scenarios",
+      framework: "SpecFlow/Gherkin",
+      github: "https://github.com/melscodingcave/league-api"
     },
     {
-      title: 'Break And Verify',
-      slug: 'break-and-verify',
-      description: 'BDD test suite for league-api with 32 passing Gherkin scenarios. Break down features, verify behavior, pocket quality.',
-      emoji: '✅',
-      tech: ['C#', 'SpecFlow', 'NUnit'],
-      tests: '32 scenarios',
-      framework: 'SpecFlow BDD',
-      github: 'https://github.com/melscodingcave/break-and-verify'
+      title: "The Practice Log",
+      slug: "the-practice-log",
+      description: "AI-powered billiards practice tracker with shot logging, trend visualization, and Claude API coaching insights. Paired with Cue QA — 21 E2E + 16 unit tests with GitHub Actions CI.",
+      emoji: "🎱",
+      tech: ["React", "TypeScript", "Tailwind", "Vite", "Claude API"],
+      tests: "16 unit + 21 E2E",
+      framework: "Vitest + Playwright",
+      github: "https://github.com/melscodingcave/the-practice-log"
     },
     {
-      title: 'Rack Stats',
-      slug: 'rack-stats',
-      description: 'Tournament analytics pipeline for a simulated Florida billiards circuit. ETL data processing with interactive Streamlit dashboard. PyTest caught 2 real query bugs.',
-      emoji: '📈',
-      tech: ['Python', 'SQLAlchemy', 'Pandas', 'Streamlit', 'Plotly'],
-      tests: '14 scenarios',
-      framework: 'PyTest',
-      github: 'https://github.com/melscodingcave/rack-stats'
-    },
-    {
-      title: 'The Practice Log',
-      slug: 'the-practice-log',
-      description: 'AI-powered billiards practice tracker with shot logging, trend visualization, and Claude API coaching insights. Full CI/CD pipeline with GitHub Actions.',
-      emoji: '🎱',
-      tech: ['React', 'TypeScript', 'Tailwind', 'Vite', 'Claude API'],
-      tests: '16 unit tests',
-      framework: 'Vitest',
-      github: 'https://github.com/melscodingcave/the-practice-log'
-    },
-    {
-      title: 'Cue QA',
-      slug: 'cue-qa',
-      description: 'End-to-end test suite for the-practice-log. Automated browser testing with Playwright ensuring quality before every deployment.',
-      emoji: '🔬',
-      tech: ['Playwright', 'TypeScript', 'GitHub Actions'],
-      tests: '21 E2E scenarios',
-      framework: 'Playwright',
-      github: 'https://github.com/melscodingcave/cue-qa'
-    },
-    {
-      title: 'Chalk It Up',
-      slug: 'chalk-it-up',
-      description: 'Cross-platform 9-Ball scorekeeper with AI-generated trash talk. Flutter widget testing ensures consistent behavior across iOS and Android.',
-      emoji: '📱',
-      tech: ['Flutter', 'Dart', 'Claude API'],
-      tests: '12 scenarios',
-      framework: 'Flutter Widget Tests',
-      github: 'https://github.com/melscodingcave/chalk-it-up'
+      title: "Rack Stats",
+      slug: "rack-stats",
+      description: "Tournament analytics pipeline for a simulated Florida billiards circuit. ETL data processing with interactive Streamlit dashboard. 14 PyTest scenarios caught 2 real query bugs during development.",
+      emoji: "📈",
+      tech: ["Python", "SQLAlchemy", "Pandas", "Streamlit", "Plotly"],
+      tests: "14 scenarios",
+      framework: "PyTest",
+      github: "https://github.com/melscodingcave/rack-stats"
     }
   ]
 
@@ -79,32 +47,27 @@ export function Projects() {
             Billiards-themed full-stack portfolio with <strong className="text-white">95 automated tests</strong> across 5 frameworks in 4 languages.
           </p>
         </div>
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <div
+            <Link
               key={project.title}
-              onClick={() => router.push(`/projects/${project.slug}`)}
-              className="bg-[#1E3A5F]/20 border border-[#3B82F6]/30 rounded-lg p-6 hover:border-[#3B82F6] transition-all hover:shadow-lg hover:shadow-[#3B82F6]/20 cursor-pointer"
+              href={`/projects/${project.slug}`}
+              className="bg-[#1E3A5F]/20 border border-[#3B82F6]/30 rounded-lg p-6 hover:border-[#3B82F6] transition-all hover:shadow-lg hover:shadow-[#3B82F6]/20 block"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="text-4xl">{project.emoji}</span>
-                <div className="flex gap-2">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="p-2 text-gray-400 hover:text-[#3B82F6] transition-colors"
-                  >
-                    <Github size={20} />
-                  </a>
-                </div>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="p-2 text-gray-400 hover:text-[#3B82F6] transition-colors"
+                >
+                  <Github size={20} />
+                </a>
               </div>
-
               <h3 className="text-xl text-white mb-3">{project.title}</h3>
               <p className="text-gray-300 mb-4 min-h-[4rem]">{project.description}</p>
-
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech) => (
                   <span
@@ -115,23 +78,22 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-
               <div className="flex items-center justify-between pt-4 border-t border-white/10">
                 <span className="text-gray-400">{project.tests}</span>
                 <span className="text-[#3B82F6]">{project.framework}</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="text-center mt-8">
-          <button
-            onClick={() => router.push('/projects')}
-            className="px-6 py-3 border border-[#3B82F6] text-[#3B82F6] rounded-lg hover:bg-[#3B82F6] hover:text-white transition-colors"
+          <Link
+            href="/projects"
+            className="px-6 py-3 border border-[#3B82F6] text-[#3B82F6] rounded-lg hover:bg-[#3B82F6] hover:text-white transition-colors inline-block"
           >
-            View All Projects →
-          </button>
+            View All Projects
+          </Link>
         </div>
       </div>
-    </section >
+    </section>
   )
 }

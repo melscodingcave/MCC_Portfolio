@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import { projectDetails } from '../data/projectData'
@@ -148,24 +149,25 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
                 {project.relatedProject && (
                     <div className="bg-gradient-to-r from-[#1E3A5F]/40 to-[#3B82F6]/10 border border-[#3B82F6]/30 rounded-lg p-6">
                         <p className="text-gray-400 text-sm mb-2">Related Project</p>
-                        <button
-                            onClick={() => router.push(`/projects/${project.relatedProject!.slug}`)}
+                        <Link
+                            href={`/projects/${project.relatedProject!.slug}`}
                             className="flex items-center gap-2 text-[#3B82F6] hover:text-blue-400 transition-colors text-lg font-semibold"
                         >
                             <ExternalLink size={18} />
                             {project.relatedProject.title}
-                        </button>
+                        </Link>
                     </div>
                 )}
-            </div>
-            {/* Back to Top */}
-            <div className="text-center pt-8">
-                <button
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="text-[#3B82F6] hover:text-blue-400 transition-colors text-sm"
-                >
-                    ↑ Back to Top
-                </button>
+
+                <div className="mt-8 pt-6 border-t border-white/10">
+                    <button
+                        onClick={() => router.back()}
+                        className="flex items-center gap-2 text-[#3B82F6] hover:text-blue-400 transition-colors"
+                    >
+                        <ArrowLeft size={20} />
+                        Back
+                    </button>
+                </div>
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowLeft, Briefcase, Calendar, Download, MapPin } from 'lucide-react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
@@ -206,14 +207,12 @@ export function WorkWithMe() {
                         Whether you need test automation, full-stack development, or strategic
                         technical guidance — let's talk.
                     </p>
-                    <button
-                        onClick={() => {
-                            router.push('/#contact')
-                        }}
-                        className="px-8 py-3 bg-[#3B82F6] text-white rounded-lg hover:bg-[#2563EB] transition-colors"
+                    <Link
+                        href="/#contact"
+                        className="px-8 py-3 bg-[#3B82F6] text-white rounded-lg hover:bg-[#2563EB] transition-colors inline-block"
                     >
                         Get In Touch
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div >
