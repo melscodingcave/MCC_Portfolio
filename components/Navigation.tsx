@@ -18,6 +18,14 @@ export function Navigation() {
     { name: 'Blog', href: '/blog' },
   ]
 
+  const navItems = [
+    { name: 'Home', href: '/#home' },
+    { name: 'About', href: '/#about' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/#contact' },
+  ]
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A1628]/95 backdrop-blur-sm border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,17 +43,7 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="flex items-center gap-8">
-              {scrollItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-gray-300 hover:text-[#3B82F6] transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-              {pageItems.map((item) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
@@ -80,17 +78,7 @@ export function Navigation() {
       {isOpen && (
         <div className="md:hidden bg-[#0A1628] border-t border-white/10">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {scrollItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block w-full text-left px-3 py-2 text-gray-300 hover:text-[#3B82F6] transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-            {pageItems.map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
