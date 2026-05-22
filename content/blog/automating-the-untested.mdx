@@ -1,0 +1,74 @@
+---
+title: "Automating the Untested: Legacy Code in the Real World"
+slug: "automating-the-untested"
+category: "Test Automation"
+readTime: "6 min read"
+date: "May 2026"
+summary: "120 developer test plans. 800 manual test cases. Tens of thousands of lines of tightly coupled code written over 60 years. Here's what it actually looks like to introduce automation when there's no foundation to build on."
+tags: ["Automation", "Testing", "Engineering", "Philosophy"]
+---
+What does it actually look like to introduce automation into a legacy codebase that has never had testing?
+
+Not the theory. The reality.
+
+*Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_testautomation-legacysystems-qa-share-7463607689093279744-mKV8?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
+
+## The Starting Point
+
+The application: tens of thousands of lines of code, written by over a dozen developers across roughly 60 years. Tightly coupled. No unit tests. No debug mode. No exposure outside the GUI framework it was built on.
+
+When QA came in, there were 120 developer-written test plans. A starting point, but nowhere near enough. That number expanded to 800 manual test cases — and that's only about 30% of what actually needs to be tested.
+
+The answer, according to everyone, was automation.
+
+Great plan. Except nobody had a playbook for automating something like this. Because there isn't one.
+
+## One Step at a Time
+
+The only way to approach a problem like this is the same way you approach any problem that feels too large to solve: one piece at a time.
+
+Take one feature. Something minimal. Fork the codebase, add hooks for debugging and testing, and build your automation from there.
+
+That's the plan, anyway.
+
+Then comes the reality of tightly coupled code.
+
+## The Weeks of Dead Ends
+
+Exposing one function pulls on ten others you didn't intend to touch. Too little exposure and the automation can't reach what it needs. Too much and you've quietly changed behavior somewhere. Back up. Try again.
+
+This goes on for weeks.
+
+- Take a function. Try to expose it. Doesn't work.
+- Try the related function. Can expose it, but it exposes too much. Back up.
+- Find the seam. Lose the seam. Find it again.
+
+Every legacy system has this quality — the coupling isn't accidental, it's the residue of decisions made under real constraints by real engineers who were solving different problems than the ones you're solving now. Respecting that while still making progress is the actual job.
+
+I'd written previously about [the questions nobody asks when automating legacy systems]([AUTOMATION BLOG POST PLACEHOLDER]) — the importance of finding seams without changing behavior, of adding visibility without overengineering. Living through it is a different experience than theorizing about it.
+
+Finally, after weeks of iteration and yes, begrudgingly leaning on Copilot to find the root issue, the right seam was found. Automation written. Tests run.
+
+**Successful.**
+
+## The Meeting Nobody Prepares You For
+
+Then came the meeting. Developers, managers, stakeholders. A room full of people who needed to understand what had been built and what it would take to scale it.
+
+Everything going well until: *"How do we implement this across ALL of the code?"*
+
+This is the moment where automation projects either get organizational buy-in or quietly die. The answer isn't a tool, a framework, or a coverage target. It's a process — and a willingness to work through it together.
+
+Show the mock. Explain the approach. Make it concrete enough that the people who have to live with the decision understand what they're agreeing to. Then work incrementally, with everyone bought in, rather than promising something comprehensive upfront that nobody actually believes is achievable.
+
+## Where It Stands
+
+30% code coverage. Only a fraction of that automated. Not a number that looks impressive on a slide.
+
+But there's something that didn't exist before: a strategy, a process, and a direction. The coverage can only move up from here. The hardest part — establishing that something was possible at all — is done.
+
+Legacy automation isn't glamorous work. It's weeks of dead ends, one good breakthrough, and then the slower work of building on it. But that breakthrough compounds. The first seam you find teaches you how to find the next one.
+
+And that's how you bridge the gap — not all at once, but one piece at a time, until you have something substantial to show for it.
+
+*👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_testautomation-legacysystems-qa-share-7463607689093279744-mKV8?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
