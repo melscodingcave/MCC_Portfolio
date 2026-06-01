@@ -1,0 +1,82 @@
+---
+title: "What Figma Make Actually Taught Me About AI-Assisted Design"
+slug: "designing-with-figma-make"
+category: "Tools & Workflow"
+readTime: "7 min read"
+date: "June 2026"
+summary: "I used Figma Make across two completely different projects at the same time. The contrast between those experiences taught me more about the tool than any single deep-dive would have."
+tags: ["AI", "Design"]
+---
+I didn't plan to use Figma Make for two completely different projects at the same time. It just kind of happened — and the contrast between those two experiences ended up teaching me more about the tool than any single deep-dive would have.
+
+*Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_figma-aidesign-flutterdev-activity-7467344867619405824-__ob?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
+
+## Two Projects, One Tool
+
+The first was my portfolio site. You're looking at it. I needed to get something up fast that actually represented my work without spending weeks perfecting it from scratch. Figma Make gave me a starting point I could work from — I ported the initial design out, then rewrote it in Next.js while keeping the core React components intact. It bridged the gap between "I have a design idea" and "I have something running in a browser" faster than anything else I'd tried.
+
+The second is a billiards app I'm building — league tracking, match logging, the kind of thing that actually scratches a real itch. For this one, I kept working inside Figma Make screen by screen, building out a mobile-first experience that will ultimately be rewritten in Flutter/Dart. React is the prototyping medium. Flutter is the destination.
+
+Same tool. Completely different workflow, completely different goals.
+
+## What Actually Happens When You Use It
+
+Figma Make sits in your Figma sidebar and generates interactive React apps from natural language prompts, existing frames, or images. That's the pitch, and it's accurate. You describe what you want, and something functional comes out the other side.
+
+But here's the thing they don't lead with: **the quality of what comes out is almost entirely a function of the quality of what you put in.**
+
+That's not a knock. It's actually the most important thing to understand about this tool.
+
+When I was loose with my prompts — "create a match logging screen with some stats" — I got something generic. Technically functional. Completely forgettable. The kind of output you'd have to rebuild anyway.
+
+When I got specific — describing the layout, the data fields, the interaction patterns, what lived above the fold, what was secondary — the output was something I could actually work with. Closer to the first draft I would have designed myself if I'd had more hours in the day.
+
+There's also a practical reason to care about this beyond just output quality: **more specific prompts use fewer credits.** Vague prompts generate vague results, which means more iteration, more regeneration, and a faster path to the credit wall. Tight, detailed prompts get you further on the first pass and leave more room to refine.
+
+## The Credit Wall Is Real
+
+I'll be straightforward about this because I think it's worth saying out loud: I hit the credit limit mid-project and had to wait it out.
+
+It's genuinely frustrating when you're in a flow state, building screen by screen, and the tool just stops. No graceful degradation — just a hard stop until the credits reset.
+
+What it forced me to do, though, was plan better. Instead of prompting reactively and iterating on the fly, I started thinking through each screen more deliberately before I touched the prompt. What does this screen actually need to do? What are the states? What data does it display? What happens when the user taps that button?
+
+Front-loading that thinking made my subsequent prompts better — and the output closer to what I actually needed on the first attempt. The constraint was annoying. The discipline it created was useful.
+
+## The Move That Changed My Workflow: Generating the Markdown
+
+This is the part I'd do first if I were starting over.
+
+Before I started building screens, I had Figma Make generate a markdown file of the full design — layout structure, component descriptions, screen flow, interaction notes. All of it, in a format I could actually reference and update.
+
+It did two things I didn't fully anticipate.
+
+First, it gave me real design documentation. Not notes in a Notion page I'd forget to update. A living artifact tied to the actual design decisions I'd made. Anyone picking up this project — including future me — would know why the screens are structured the way they are.
+
+Second, it gave me a baseline for the Flutter/Dart rewrite. Instead of trying to mentally translate a visual prototype into a component architecture, I have a written specification to work from. The markdown doesn't write the Dart code for me, but it maps the structure clearly enough that the translation is a technical exercise rather than a guessing game.
+
+If you're using Figma Make to prototype something you plan to eventually rebuild in a different stack, this step isn't optional. It's the bridge.
+
+## What I'd Tell Someone Starting Out
+
+A few things I wish I'd known earlier:
+
+**Prompt like an engineer, not a user.** Don't describe what you want to see. Describe how it should behave, what data it holds, what the edge cases are, and what the hierarchy of information is. The more you think through before you prompt, the less you'll spend after.
+
+**Screen by screen is the right pace.** Trying to generate an entire app flow in one shot produces something that looks complete and is mostly wrong. One screen at a time, with clear prompts, produces something you can actually use.
+
+**Generate the markdown early.** Do it before you think you need it. It's easier to maintain documentation from the start than to reconstruct it from a finished prototype.
+
+**Treat the output as a first draft, not a final answer.** The React code Figma Make generates is a starting point. For my portfolio, that meant porting to Next.js. For the billiards app, it means an eventual Flutter rewrite. The value isn't in the generated code itself — it's in the design decisions the process forces you to make.
+
+## The Honest Summary
+
+Figma Make is a genuinely useful tool in the right hands, with the right expectations. It's not magic. It's not going to replace the thinking. But if you come in with a clear idea, a well-structured prompt, and a plan for where the output is going — it will move you significantly faster than starting from a blank canvas.
+
+The credit system is a real constraint worth planning around. The markdown export is underrated and worth using intentionally. And the gap between a vague prompt and a specific one is larger than you'd expect before you've hit it yourself.
+
+I'll keep using it as the screens evolve. The Flutter rewrite is the eventual destination, and Figma Make is doing exactly what I need it to do: helping me get the design right before I commit it to production code.
+
+That's the right use of a tool like this. And honestly, it's the right use of AI in general.
+
+*👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_figma-aidesign-flutterdev-activity-7467344867619405824-__ob?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
