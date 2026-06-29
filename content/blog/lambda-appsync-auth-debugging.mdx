@@ -1,0 +1,102 @@
+---
+title: "Six Permission Errors and a Circular Dependency: Debugging AWS Lambda to AppSync Auth"
+slug: "lambda-appsync-auth-debugging"
+category: "Engineering Philosophy"
+readTime: "7 min read"
+date: "June 2026"
+summary: "The goal was simple: write three records to AppSync when a new user signs up. What followed was four issues, six permission errors, one circular dependency, and a hard lesson about how many layers AWS auth actually has."
+tags: ["AWS", "Amplify", "Flutter", "Lambda", "AppSync", "Debugging"]
+---
+
+This week, I fought hard to get a Lambda trigger working in an app I'm building
+with Dart/Flutter on AWS Amplify. The goal was simple: write three records to
+AppSync whenever a new user signs up. I had the docs. My seed script worked
+perfectly. The setup was right. Everything should have translated over cleanly —
+just slightly more work.
+
+Wrong.
+
+*Also shared on [LinkedIn](https://www.linkedin.com/posts/melaniebasso_aws-amplify-flutter-share-7477362259028226048-xUDM/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo).*
+
+## Issue 1: `allow.resource()` is not a function
+
+Amplify Gen 2 docs say to use `allow.resource()` to grant a Lambda write access
+to your AppSync models. The runtime disagreed. No matter what I tried, I kept
+hitting `[TypeError] allow.resource is not a function`. The
+[official documentation](https://docs.amplify.aws/vue/build-a-backend/data/customize-authz/grant-lambda-function-access-to-api/)
+describes this as the correct approach — but in `@aws-amplify/backend` 1.23.0,
+it simply doesn't work.
+
+Since I'm in a sandbox environment, I pivoted to `allow.publicApiKey()` as a
+stopgap and moved on. More on why that created its own problem later.
+
+## Issue 2: CloudFormation Circular Dependency
+
+Moving to IAM auth introduced a new problem. My auth stack and data stack were
+now referencing each other, and CloudFormation refused to deploy — a classic
+chicken-and-egg situation where neither stack can finish creating because each
+is waiting on the other.
+
+The fix came in two parts. First, I assigned the Lambda to the auth stack using
+`resourceGroupName: 'auth'` in `defineFunction` — since it's an auth trigger,
+that's where it belongs. Second, I removed an `AdminGetUser` call that wasn't
+actually necessary. I had added it to fetch user attributes, but those values
+were already available directly in the Cognito trigger event. Removing it
+eliminated the cross-stack reference that was causing the conflict, and
+deployment succeeded.
+
+## Issue 3: IAM Policy Exists. AppSync Still Says No.
+
+With deployment working, I expected the IAM path to succeed. It didn't. The
+Lambda's role had the policy. The policy granted `appsync:GraphQL`. AppSync
+returned "Permission denied" anyway.
+
+The culprit? IAM was configured everywhere except the schema authorization
+rules. AWS auth has layers — and all of them have to align:
+
+- **IAM policy** — does the Lambda's role have permission to call AppSync?
+- **AppSync auth mode** — is IAM listed as an accepted authorization mode on the API?
+- **Schema auth rules** — does the model's authorization allow writes from this principal?
+
+Miss any one of them and you get a failure that doesn't clearly tell you which
+layer is wrong. In my case, the schema auth rules weren't configured to accept
+IAM writes, even though everything else was in place.
+
+## Issue 4: API Key Works, But the Schema Won't Allow It
+
+Switching to API key auth resolved the IAM problem but introduced another: the
+schema auth rules didn't permit API key writes either. Adding
+`allow.publicApiKey().to(['create'])` to the relevant models fixed it — but
+this is a real security tradeoff.
+
+Anyone with the API key could theoretically call those create mutations directly.
+It's sufficient for sandbox testing, but it goes on the technical debt list
+immediately. The right solution will be found and implemented before this app
+releases to production. Until then, the stopgap is documented with a TODO
+comment and a clear remediation plan.
+
+## What I Actually Learned
+
+I'm not perfect. The AI I worked with to build and troubleshoot this isn't
+perfect either. AWS has layers — IAM, AppSync, Cognito, CloudFormation, Lambda
+— and all of them have to align for your app to work. The errors aren't always
+clear. The docs aren't always current. And sometimes the documented solution
+flat out doesn't work in the version you're running.
+
+That's not a complaint. That's the job.
+
+Working through it builds something that can't be faked: a real mental model of
+how these systems fit together. The next time I hit an AppSync permission error,
+I'll know exactly which layer to check first.
+
+## Where It Stands
+
+This piece of the ticket is marked "done" — but it's not over. I have a
+documented stopgap sitting in my codebase with a TODO comment and a plan to fix
+it before this app ever sees a real user. Moving forward with intentional
+technical debt is sometimes the right call. Letting one unresolved
+infrastructure limitation block an entire feature indefinitely isn't.
+
+Sometimes the best decision and the hardest decision are the same one.
+
+*👉 [View the LinkedIn post](https://www.linkedin.com/posts/melaniebasso_aws-amplify-flutter-share-7477362259028226048-xUDM/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAsaJtYBVeD3Fi7kLP1aXml_3EABYCZLjDo)*
